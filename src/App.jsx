@@ -164,7 +164,7 @@ const ExecView = () => (
         { 
           role: "Lead Principal AI Engineer | iBase-t", 
           time: "June 2025 — Present | California", 
-          desc: "Directing high-performing AI organization. Secured 6+ major enterprise customers via Scan-AI pipeline, reducing turnaround from days to hours.",
+          desc: "Directing high-performing AI organization. Secured major enterprise customers via Solumina-AI, reducing turnaround from days to hours.",
           gradient: "from-emerald-500 via-emerald-400 to-blue-500",
           icon: <Target className="size-24 md:size-32 lg:size-40" />
         },
