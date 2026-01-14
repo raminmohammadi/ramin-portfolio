@@ -6,8 +6,10 @@ import {
   GraduationCap, Presentation, ShieldCheck, PlayCircle, TrendingUp, 
   Monitor, HeartPulse, Database, Terminal, BrainCircuit, ChevronLeft, ChevronRight
 } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
-// Asset Imports (Preserved from your version)
+// Asset Imports
 import expoMain from './assets/1766011722581.jpeg';
 import expoJudging from './assets/1766011720233.jpeg';
 import expoPartner from './assets/1766011714075.jpeg';
@@ -32,8 +34,9 @@ const App = () => {
     { id: 'home', label: 'Overview' },
     { id: 'exec', label: 'Executive Leadership' },
     { id: 'teaching', label: 'Teaching & Academy' },
-    { id: 'research', label: 'Research & Innovation' },
+    { id: 'research', label: 'Research & Patents' },
     { id: 'expo', label: 'MLOps Expo' },
+    { id: 'projects', label: 'Hobby Projects' },
     { id: 'background', label: 'Background & Bio' }
   ];
 
@@ -86,6 +89,7 @@ const App = () => {
         {activeTab === 'teaching' && <TeachingView />}
         {activeTab === 'research' && <ResearchView />}
         {activeTab === 'expo' && <ExpoView />}
+        {activeTab === 'projects' && <ProjectsView />}
         {activeTab === 'background' && <BackgroundView />}
       </main>
 
@@ -103,7 +107,8 @@ const App = () => {
   );
 };
 
-/* --- SUB-VIEW: HOME --- */
+/* --- SUB-VIEWS --- */
+
 const HomeView = ({ setTab }) => (
   <div className="animate-in fade-in duration-1000">
     <header className="relative pt-72 pb-40 px-8 overflow-hidden">
@@ -146,12 +151,11 @@ const HomeView = ({ setTab }) => (
   </div>
 );
 
-/* --- VIEW: EXECUTIVE --- */
 const ExecView = () => (
   <div className="pt-60 pb-40 px-8 animate-in slide-in-from-bottom duration-1000 max-w-7xl mx-auto">
     <div className="text-center md:text-left mb-32 border-b border-white/5 pb-20">
       <h2 className="text-xs md:text-sm font-black text-emerald-500 uppercase tracking-[0.6em] mb-6">Strategy & Growth</h2>
-      <h1 className="text-6xl md:text-[7.65rem] font-black text-white tracking-tighter uppercase italic leading-[0.85] mb-12 leading-none">
+      <h1 className="text-6xl md:text-[7.65rem] font-black text-white tracking-tighter uppercase italic mb-12 leading-none">
         Executive <br /> Leadership.
       </h1>
       <p className="text-2xl md:text-3xl text-slate-400 max-w-3xl font-light italic leading-relaxed border-l-2 border-emerald-500 pl-10">
@@ -217,7 +221,6 @@ const ExecView = () => (
   </div>
 );
 
-/* --- VIEW: TEACHING --- */
 const TeachingView = () => (
   <div className="pt-60 pb-40 px-8 animate-in slide-in-from-bottom duration-1000 max-w-7xl mx-auto">
     <div className="text-center mb-32 border-b border-white/5 pb-20">
@@ -278,6 +281,7 @@ const TeachingView = () => (
     </div>
   </div>
 );
+
 
 /* --- SUB-VIEW: RESEARCH --- */
 const ResearchView = () => (
@@ -525,5 +529,138 @@ const BackgroundView = () => (
     <div className="p-15 md:p-10 lg:p-5 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-[120px] text-[#020617] font-black text-center uppercase tracking-[0.5em] shadow-2xl shadow-emerald-500/30 text-3xl md:text-4xl lg:text-xl italic leading-none">Principal Leader • Scientist • Strategic Advisor</div>
   </div>
 );
+
+const ProjectsView = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [readmeContent, setReadmeContent] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const repos = [
+    { name: 'AI-agent-smart-assist', path: 'raminmohammadi/ai-agent-smart-assist', desc: 'Agentic AI' },
+    { name: 'Averix', path: 'raminmohammadi/Averix', desc: 'Code Generation' },
+    { name: 'GradientBlueprint', path: 'raminmohammadi/GradientBlueprint', desc: 'Architectural Patterns' },
+    { name: 'US Food', path: 'raminmohammadi/US_Food', desc: 'Data Analytics' },
+    { name: 'MLOps', path: 'raminmohammadi/MLOps', desc: 'Production Systems' },
+    { name: 'GEN-AI', path: 'raminmohammadi/GEN-AI', desc: 'Generative Frameworks' },
+    { name: 'NLP', path: 'raminmohammadi/NLP', desc: 'Language Processing' },
+  ];
+
+  const fetchReadme = async (repoPath) => {
+    setLoading(true);
+    setSelectedProject(repoPath);
+    try {
+      const response = await fetch(`https://raw.githubusercontent.com/${repoPath}/main/README.md`);
+      if (response.ok) {
+        const text = await response.text();
+        setReadmeContent(text);
+      } else {
+        const altResponse = await fetch(`https://raw.githubusercontent.com/${repoPath}/master/README.md`);
+        const altText = await altResponse.text();
+        setReadmeContent(altResponse.ok ? altText : "README not found.");
+      }
+    } catch (err) {
+      setReadmeContent("Error loading project details.");
+    }
+    setLoading(false);
+  };
+
+  return (
+    <div className="pt-48 pb-32 px-8 animate-in slide-in-from-bottom-10 duration-700 max-w-7xl mx-auto">
+      <div className="mb-20 border-b border-white/5 pb-12 flex flex-col md:flex-row justify-between items-end gap-8">
+        <div>
+          <h2 className="text-[10px] font-bold text-emerald-500 uppercase tracking-[0.5em] mb-4">Laboratory</h2>
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic mb-0 leading-none">Hobby Projects.</h1>
+        </div>
+        
+        {/* NEW: PYPI PACKAGE SECTION */}
+        <a 
+          href="https://pypi.org/project/gradientblueprint/" 
+          target="_blank" 
+          rel="noreferrer" 
+          className="group relative p-6 bg-white/[0.03] border border-white/10 rounded-3xl hover:border-blue-500/50 transition-all shadow-2xl max-w-sm"
+        >
+          <div className="flex items-center gap-4 mb-3">
+            <div className="p-2 bg-blue-500/20 rounded-lg text-blue-400 group-hover:scale-110 transition-transform">
+              <Database size={20} />
+            </div>
+            <span className="text-[10px] font-black text-blue-500 uppercase tracking-widest leading-none">PyPI Publication</span>
+          </div>
+          <h3 className="text-xl font-black text-white uppercase italic mb-2 tracking-tight group-hover:text-blue-400 transition-colors">GradientBlueprint</h3>
+          <p className="text-xs text-slate-500 italic mb-4">Official Python package for streamlined ML architectural patterns.</p>
+          <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+            <Terminal size={14} /> pip install gradientblueprint
+          </div>
+        </a>
+      </div>
+
+      <div className="grid lg:grid-cols-12 gap-12">
+        <div className="lg:col-span-4 space-y-4">
+          {repos.map((repo) => (
+            <button
+              key={repo.path}
+              onClick={() => fetchReadme(repo.path)}
+              className={`w-full text-left p-6 rounded-3xl border transition-all group ${
+                selectedProject === repo.path 
+                ? 'bg-emerald-500/10 border-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.1)]' 
+                : 'bg-white/5 border-white/10 hover:border-white/30'
+              }`}
+            >
+              <div className="flex justify-between items-start">
+                <h3 className={`font-black uppercase italic text-xl ${selectedProject === repo.path ? 'text-emerald-400' : 'text-white'}`}>
+                  {repo.name}
+                </h3>
+                <Github size={18} className={selectedProject === repo.path ? 'text-emerald-400' : 'text-slate-600'} />
+              </div>
+              <p className="text-[10px] font-bold text-slate-500 uppercase mt-2 tracking-widest">{repo.desc}</p>
+            </button>
+          ))}
+        </div>
+
+        <div className="lg:col-span-8 bg-[#020617] border border-white/10 rounded-[40px] overflow-hidden flex flex-col h-[700px] shadow-2xl">
+          {selectedProject && (
+            <div className="bg-white/5 px-8 py-4 border-b border-white/5 flex justify-between items-center shrink-0">
+              <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest">Live Documentation</span>
+              <a href={`https://github.com/${selectedProject}`} target="_blank" rel="noreferrer" className="text-white hover:text-emerald-400 transition-colors flex items-center gap-2 text-xs font-bold">
+                SOURCE CODE <ExternalLink size={14} />
+              </a>
+            </div>
+          )}
+
+          <div className="p-8 md:p-12 overflow-y-auto custom-scrollbar flex-1 bg-[#020617]">
+            {loading ? (
+              <div className="flex flex-col items-center justify-center h-full gap-4">
+                <div className="w-12 h-12 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin" />
+                <span className="text-emerald-500 font-black italic uppercase text-xs tracking-widest">Fetching Repository...</span>
+              </div>
+            ) : selectedProject ? (
+              <div className="prose prose-invert max-w-none 
+                prose-headings:font-black prose-headings:italic prose-headings:tracking-tighter prose-headings:uppercase prose-headings:text-white prose-headings:mb-6 prose-headings:mt-10
+                prose-h1:text-4xl prose-h2:text-2xl prose-h2:border-b prose-h2:border-white/10 prose-h2:pb-2
+                prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-6
+                prose-li:text-slate-300 prose-li:my-1
+                prose-ul:list-disc prose-ol:list-decimal
+                prose-pre:bg-black/50 prose-pre:border prose-pre:border-white/10 prose-pre:rounded-2xl prose-pre:p-6
+                prose-code:text-emerald-400 prose-code:bg-emerald-500/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+                prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline">
+                
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {readmeContent}
+                </ReactMarkdown>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center h-full text-center py-20">
+                <Terminal size={40} className="text-slate-700 mb-8" />
+                <h3 className="text-2xl font-black text-white italic uppercase mb-4">Select a Repository</h3>
+                <p className="text-slate-500 max-w-xs mx-auto font-light italic text-xl">
+                  Explore technical documentation and engineering patterns pulled directly from my GitHub environment.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default App;
