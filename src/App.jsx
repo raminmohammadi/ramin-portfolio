@@ -168,7 +168,7 @@ const ExecView = () => (
         { 
           role: "Lead Principal AI Engineer | iBase-t", 
           time: "June 2025 — Present | California", 
-          desc: "Directing high-performing AI organization. Secured 6+ major enterprise customers via Scan-AI pipeline, reducing turnaround from days to hours.",
+          desc: "Directing high-performing AI organization. Secured major enterprise customers via Solumina-AI.",
           gradient: "from-emerald-500 via-emerald-400 to-blue-500",
           icon: <Target className="size-24 md:size-32 lg:size-40" />
         },
@@ -466,7 +466,7 @@ const BackgroundView = () => (
           </p>
           
           <p className="max-w-4xl text-white font-medium italic leading-relaxed">
-            Beyond the research, what drives me is the "Aha" moment in a conversation with a customer-that point where the complexity fades away and they realize exactly how the system solves their problem. My work is about building toward that moment: turning research-grade computation into high-integrity infrastructure that actually works for people.
+            Beyond the research, what drives me is the "Aha" moment in a conversation with a customer, that point where the complexity fades away and they realize exactly how the system solves their problem. My work is about building toward that moment: turning research-grade computation into high-integrity infrastructure that actually works for people.
           </p>
         </div>
       </div>
