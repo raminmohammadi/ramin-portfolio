@@ -37,7 +37,6 @@ const App = () => {
     { id: 'research', label: 'Research & Patents' },
     { id: 'expo', label: 'MLOps Expo' },
     { id: 'projects', label: 'Hobby Projects' },
-    { id: 'background', label: 'Background & Bio' }
   ];
 
   const currentLabel = navOptions.find(opt => opt.id === activeTab)?.label;
@@ -90,7 +89,6 @@ const App = () => {
         {activeTab === 'research' && <ResearchView />}
         {activeTab === 'expo' && <ExpoView />}
         {activeTab === 'projects' && <ProjectsView />}
-        {activeTab === 'background' && <BackgroundView />}
       </main>
 
       <footer className="py-20 px-8 border-t border-white/5 bg-black">
@@ -109,8 +107,10 @@ const App = () => {
 
 /* --- SUB-VIEWS --- */
 
+/* --- VIEW: HOME (Combined with Background & Bio) --- */
 const HomeView = ({ setTab }) => (
   <div className="animate-in fade-in duration-1000">
+    {/* SECTION 1: ORIGINAL OVERVIEW HEADER */}
     <header className="relative pt-72 pb-40 px-8 overflow-hidden">
       <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-emerald-500/[0.03] blur-[150px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2" />
       <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left">
@@ -125,7 +125,9 @@ const HomeView = ({ setTab }) => (
           Leading high-stakes AI transformation. Managing principal-level teams and 
           pioneering the industrial standards for MLOps and Generative AI.
         </p>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        
+        {/* Statistics Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20 text-left">
           {[
             { v: "10+", l: "Years Principal Exp" },
             { v: "12+", l: "Peer Publications" },
@@ -138,6 +140,7 @@ const HomeView = ({ setTab }) => (
             </div>
           ))}
         </div>
+
         <div className="flex flex-wrap gap-8 justify-center md:justify-start">
           <button onClick={() => setTab('exec')} className="px-12 py-6 bg-white text-[#020617] font-black uppercase tracking-widest text-xs md:text-sm hover:bg-emerald-400 transition-all flex items-center gap-4 shadow-2xl">
             Executive Summary <ArrowRight size={20} />
@@ -148,6 +151,87 @@ const HomeView = ({ setTab }) => (
         </div>
       </div>
     </header>
+
+    {/* SECTION 2: THE STORY & NARRATIVE (Original Background) */}
+    <section className="py-40 px-8 bg-black/30 border-t border-white/5">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center md:text-left mb-32 border-b border-white/5 pb-20">
+          <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] mb-8">My Story</h2>
+          <div className="max-w-5xl space-y-10">
+            <p className="text-2xl md:text-4xl text-slate-300 font-light italic leading-tight border-l-4 border-emerald-500 pl-10 md:pl-16">
+              "I spent my Ph.D. years focused on the technical 'what,' but my career has been defined by the 'how.'"
+            </p>
+            
+            <div className="text-lg md:text-xl text-slate-400 font-light leading-relaxed pl-1 md:pl-20 space-y-8">
+              <p className="max-w-3xl">
+                Most people can build a model; very few can ship one that survives a production environment with regulated data and enterprise scale. I went back for my MBA because I realized that the hardest problems in AI aren't just technical-they’re organizational and strategic.
+              </p>
+              
+              <p className="max-w-4xl text-white font-medium italic leading-relaxed">
+                Beyond the research, what drives me is the "Aha" moment in a conversation with a customer, that point where the complexity fades away and they realize exactly how the system solves their problem. My work is about building toward that moment: turning research-grade computation into high-integrity infrastructure that actually works for people.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* SECTION 3: EDUCATION & MEDIA (Original Background) */}
+        <div className="grid lg:grid-cols-2 gap-20 mb-32">
+          {/* Education Block */}
+          <div className="space-y-12">
+            <h3 className="text-3xl md:text-4xl font-black text-white mb-16 uppercase tracking-widest italic flex items-center gap-8 border-b border-white/5 pb-8 text-left">
+              <Rocket className="text-emerald-500" size={48} /> Education
+            </h3>
+            <div className="p-16 md:p-20 bg-white/[0.02] border border-white/10 rounded-[80px] relative overflow-hidden shadow-2xl text-left">
+              <div className="border-l-8 border-emerald-500 pl-12 mb-16">
+                <h4 className="text-4xl font-black italic text-white uppercase leading-none mb-6 tracking-tighter">Ph.D. CS / IE</h4>
+                <p className="text-slate-500 font-black uppercase text-sm tracking-widest italic">Northeastern University | 2020.</p>
+              </div>
+              <div className="border-l-8 border-blue-500 pl-12 mb-16">
+                <h4 className="text-4xl font-black italic text-white uppercase leading-none mb-6 tracking-tighter">MBA Candidate</h4>
+                <p className="text-slate-500 font-black uppercase text-sm tracking-widest italic">Northeastern University | Expected 2027.</p>
+              </div>
+              <div className="mt-20 pt-16 border-t border-white/5 space-y-12 text-slate-400 text-xl md:text-2xl italic font-extralight">
+                <div className="flex gap-10 items-center"><Award className="text-yellow-500" size={40} /> Akira Yamamura Award for Excellence</div>
+                <div className="flex gap-10 items-center"><Trophy className="text-blue-500" size={40} /> Boston Scientific Challenge Finalist</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Media & Presence Block */}
+          <div className="space-y-12">
+            <h3 className="text-3xl md:text-4xl font-black text-white mb-16 uppercase tracking-widest italic flex items-center gap-8 border-b border-white/5 pb-8 text-left">
+              <Mic className="text-red-500" size={48} /> Media & Presence
+            </h3>
+            <div className="space-y-12">
+              <a href="https://www.youtube.com/watch?v=vMQOZDuqOVI" target="_blank" rel="noreferrer" className="p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[70px] block hover:bg-white/10 transition-all group overflow-hidden shadow-2xl text-left">
+                <div className="flex justify-between items-start mb-12"><Youtube className="text-red-600" size={80} /><span className="text-emerald-500 font-black uppercase text-xs tracking-widest border border-emerald-500/20 px-8 py-3 rounded-full italic shadow-2xl">Featured Talk | 2024</span></div>
+                <h4 className="text-white font-black uppercase italic text-3xl mb-10 leading-none tracking-tighter">Career Resilience in the Age of AI | Northeastern</h4>
+                <div className="flex items-center gap-5 text-slate-500 group-hover:text-white transition-colors"><PlayCircle size={32} /> <span className="text-sm font-black uppercase tracking-widest italic">Watch Full Presentation</span></div>
+              </a>
+              
+              <a href="https://practicalai.fm/340" target="_blank" rel="noreferrer" className="flex items-center gap-10 p-12 bg-white/[0.02] border border-white/10 rounded-[70px] hover:bg-white/5 transition-all group shadow-2xl text-left">
+                <img src={practicalAI340} alt="Practical AI" className="w-40 h-40 rounded-[40px] object-cover grayscale group-hover:grayscale-0 shadow-2xl" />
+                <div>
+                  <span className="text-emerald-500 font-black uppercase text-xs tracking-[0.4em] mb-6 block italic">Practical AI Episode 340</span>
+                  <h4 className="text-2xl font-black text-white uppercase italic leading-none tracking-tighter">The AI engineer skills gap</h4>
+                </div>
+              </a>
+
+              <a href="https://www.youtube.com/@MLWithRamin" target="_blank" rel="noreferrer" className="p-12 bg-white/[0.02] border border-white/10 rounded-[70px] block hover:bg-white/10 transition-all group shadow-2xl text-left">
+                 <Youtube className="text-red-600 mb-10" size={80} />
+                 <h4 className="text-white font-black uppercase italic tracking-widest text-4xl mb-8 leading-none tracking-tighter">ML With Ramin</h4>
+                 <p className="text-slate-400 text-2xl font-extralight italic">Educational platform reaching 1k+ annual students globally.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* SECTION 4: FINAL PROFESSIONAL BANNER */}
+        <div className="p-15 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-[120px] text-[#020617] font-black text-center uppercase tracking-[0.5em] shadow-2xl shadow-emerald-500/30 text-2xl md:text-3xl italic leading-none">
+          Principal Leader • Scientist • Strategic Advisor
+        </div>
+      </div>
+    </section>
   </div>
 );
 
@@ -444,91 +528,6 @@ const ExpoView = () => {
     </div>
   );
 };
-
-/* --- VIEW: BACKGROUND --- */
-const BackgroundView = () => (
-  <div className="pt-60 pb-40 px-8 animate-in slide-in-from-bottom duration-1000 max-w-7xl mx-auto">
-    <div className="text-center md:text-left mb-32 border-b border-white/5 pb-20">
-      <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] mb-8">The Story</h2>
-      <h1 className="text-6xl md:text-[7.65rem] font-black text-white tracking-tighter uppercase italic mb-12 leading-none">
-        Background.
-      </h1>
-      
-      {/* Narrative Section */}
-      <div className="max-w-5xl space-y-10">
-        <p className="text-2xl md:text-4xl text-slate-300 font-light italic leading-tight border-l-4 border-emerald-500 pl-10 md:pl-16">
-          "I spent my Ph.D. years focused on the technical 'what,' but my career has been defined by the 'how.'"
-        </p>
-        
-        <div className="text-lg md:text-xl text-slate-400 font-light leading-relaxed pl-1 md:pl-20 space-y-8">
-          <p className="max-w-3xl">
-            Most people can build a model; very few can ship one that survives a production environment with regulated data and enterprise scale. I went back for my MBA because I realized that the hardest problems in AI aren't just technical-they’re organizational and strategic.
-          </p>
-          
-          <p className="max-w-4xl text-white font-medium italic leading-relaxed">
-            Beyond the research, what drives me is the "Aha" moment in a conversation with a customer, that point where the complexity fades away and they realize exactly how the system solves their problem. My work is about building toward that moment: turning research-grade computation into high-integrity infrastructure that actually works for people.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div className="grid lg:grid-cols-2 gap-20 mb-40">
-      <div className="space-y-12">
-        <h3 className="text-3xl md:text-4xl font-black text-white mb-16 uppercase tracking-widest italic flex items-center gap-8 border-b border-white/5 pb-8">
-          <Rocket className="text-emerald-500" size={48} /> Education
-        </h3>
-        <div className="p-16 md:p-20 bg-white/[0.02] border border-white/10 rounded-[80px] relative overflow-hidden shadow-2xl group">
-          <div className="border-l-8 border-emerald-500 pl-12 mb-16 group-hover:border-emerald-400 transition-colors">
-            <h4 className="text-4xl md:text-4xl font-black italic text-white uppercase leading-none mb-6 tracking-tighter leading-none tracking-tighter">Ph.D. CS / IE</h4>
-            <p className="text-slate-500 font-black uppercase text-sm md:text-base tracking-widest italic">Northeastern University | 2020.</p>
-          </div>
-          <div className="border-l-8 border-blue-500 pl-12 mb-16 group-hover:border-blue-400 transition-colors">
-            <h4 className="text-4xl md:text-4xl font-black italic text-white uppercase leading-none mb-6 tracking-tighter leading-none tracking-tighter">MBA Candidate</h4>
-            <p className="text-slate-500 font-black uppercase text-sm md:text-base tracking-widest italic">Northeastern University | Expected 2027.</p>
-          </div>
-          <div className="mt-20 pt-16 border-t border-white/5 space-y-12 text-slate-400 text-xl md:text-2xl italic font-extralight">
-            <div className="flex gap-10 items-center leading-none"><Award className="text-yellow-500 shrink-0 shadow-2xl" size={40} /> Akira Yamamura Award for Excellence</div>
-            <div className="flex gap-10 items-center leading-none"><Trophy className="text-blue-500 shrink-0 shadow-2xl" size={40} /> Boston Scientific Challenge Finalist</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="space-y-12">
-        <h3 className="text-3xl md:text-4xl font-black text-white mb-16 uppercase tracking-widest italic flex items-center gap-8 border-b border-white/5 pb-8">
-          <Mic className="text-red-500" size={48} /> Media & Presence
-        </h3>
-        <div className="space-y-12">
-          <a href="https://www.youtube.com/watch?v=vMQOZDuqOVI" target="_blank" rel="noreferrer" className="p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[70px] block hover:bg-white/10 transition-all group overflow-hidden shadow-2xl">
-            <div className="flex justify-between items-start mb-12"><Youtube className="text-red-600 group-hover:scale-110 transition-transform shadow-2xl" size={100} /><span className="text-emerald-500 font-black uppercase text-xs md:text-sm tracking-widest border border-emerald-500/20 px-8 py-3 rounded-full backdrop-blur-2xl italic shadow-2xl">Featured Talk | 2024</span></div>
-            <h4 className="text-white font-black uppercase italic text-3xl md:text-4xl lg:text-3xl mb-10 leading-none tracking-tighter">Career Resilience in the Age of AI | Northeastern</h4>
-            <div className="flex items-center gap-5 text-slate-500 group-hover:text-white transition-colors shadow-lg"><PlayCircle size={32} /> <span className="text-sm md:text-base font-black uppercase tracking-widest italic">Watch Full Presentation</span></div>
-          </a>
-          
-          <a href="https://practicalai.fm/340" target="_blank" rel="noreferrer" className="flex items-center gap-10 p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[70px] hover:bg-white/5 transition-all group shadow-2xl">
-            <img src={practicalAI340} alt="Practical AI 340" className="w-40 h-40 md:w-48 md:h-48 rounded-[40px] object-cover grayscale group-hover:grayscale-0 transition-all shadow-2xl group-hover:scale-105" />
-            <div>
-              <span className="text-emerald-500 font-black uppercase text-xs md:text-sm tracking-[0.4em] mb-6 block italic">Practical AI Episode 340</span>
-              <h4 className="text-2xl md:text-3xl lg:text-3xl font-black text-white uppercase italic leading-none tracking-tighter">The AI engineer skills gap</h4>
-            </div>
-          </a>
-          <a href="https://practicalai.fm/273" target="_blank" rel="noreferrer" className="flex items-center gap-10 p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[70px] hover:bg-white/5 transition-all group shadow-2xl">
-            <img src={practicalAI273} alt="Practical AI 340" className="w-40 h-40 md:w-48 md:h-48 rounded-[40px] object-cover grayscale group-hover:grayscale-0 transition-all shadow-2xl group-hover:scale-105" />
-            <div>
-              <span className="text-emerald-500 font-black uppercase text-xs md:text-sm tracking-[0.4em] mb-6 block italic">Practical AI Episode 273</span>
-              <h4 className="text-2xl md:text-3xl lg:text-3xl font-black text-white uppercase italic leading-none tracking-tighter">Finding sensitive data with edge models</h4>
-            </div>
-          </a>
-          <a href="https://www.youtube.com/@MLWithRamin" target="_blank" rel="noreferrer" className="p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[70px] block hover:bg-white/10 transition-all group overflow-hidden shadow-2xl">
-             <Youtube className="text-red-600 mb-10 group-hover:rotate-12 transition-transform duration-700 shadow-2xl" size={80} />
-             <h4 className="text-white font-black uppercase italic tracking-widest text-4xl md:text-5xl lg:text-5xl mb-8 leading-none tracking-tighter">ML With Ramin</h4>
-             <p className="text-slate-400 text-2xl md:text-2xl font-extralight italic leading-snug">Educational platform reaching 1k+ annual students globally.</p>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div className="p-15 md:p-10 lg:p-5 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-[120px] text-[#020617] font-black text-center uppercase tracking-[0.5em] shadow-2xl shadow-emerald-500/30 text-3xl md:text-4xl lg:text-xl italic leading-none">Principal Leader • Scientist • Strategic Advisor</div>
-  </div>
-);
 
 const ProjectsView = () => {
   const [selectedProject, setSelectedProject] = useState(null);
