@@ -18,6 +18,7 @@ import expoCrowd2 from './assets/1745263483597.jpeg';
 import northeasternLogo from './assets/northeastern_logo.png'; 
 import practicalAI340 from './assets/practical_ai_340.png';
 import practicalAI273 from './assets/practical_ai_273.png';
+import profilePic from './assets/Ramin-Mohammadi.png';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -105,12 +106,10 @@ const App = () => {
   );
 };
 
-/* --- SUB-VIEWS --- */
-
 /* --- VIEW: HOME (Combined with Background & Bio) --- */
 const HomeView = ({ setTab }) => (
   <div className="animate-in fade-in duration-1000">
-    {/* SECTION 1: ORIGINAL OVERVIEW HEADER */}
+    {/* SECTION 1: ORIGINAL OVERVIEW HEADER (Unchanged) */}
     <header className="relative pt-72 pb-40 px-8 overflow-hidden">
       <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-emerald-500/[0.03] blur-[150px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2" />
       <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left">
@@ -152,29 +151,45 @@ const HomeView = ({ setTab }) => (
       </div>
     </header>
 
-    {/* SECTION 2: THE STORY & NARRATIVE (Original Background) */}
+    {/* SECTION 2: THE STORY & NARRATIVE WITH PROFILE PICTURE */}
     <section className="py-40 px-8 bg-black/30 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center md:text-left mb-32 border-b border-white/5 pb-20">
-          <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] mb-8">My Story</h2>
-          <div className="max-w-5xl space-y-10">
-            <p className="text-2xl md:text-4xl text-slate-300 font-light italic leading-tight border-l-4 border-emerald-500 pl-10 md:pl-16">
-              "I spent my Ph.D. years focused on the technical 'what,' but my career has been defined by the 'how.'"
-            </p>
-            
-            <div className="text-lg md:text-xl text-slate-400 font-light leading-relaxed pl-1 md:pl-20 space-y-8">
-              <p className="max-w-3xl">
-                Most people can build a model; very few can ship one that survives a production environment with regulated data and enterprise scale. I went back for my MBA because I realized that the hardest problems in AI aren't just technical-they’re organizational and strategic.
+        <div className="grid lg:grid-cols-12 gap-16 items-center mb-32 border-b border-white/5 pb-20">
+          {/* Profile Picture Column */}
+          <div className="lg:col-span-4 relative group">
+            <div className="absolute inset-0 bg-emerald-500/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="relative rounded-[40px] overflow-hidden border border-white/10 shadow-2xl aspect-[4/5] lg:aspect-auto">
+              <img 
+                src={profilePic} 
+                alt="Ramin Mohammadi" 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-60" />
+            </div>
+          </div>
+
+          {/* Text Content Column */}
+          <div className="lg:col-span-8 text-center md:text-left">
+            <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] mb-8">My Story</h2>
+            <div className="space-y-10">
+              <p className="text-2xl md:text-4xl text-slate-300 font-light italic leading-tight border-l-4 border-emerald-500 pl-10">
+                "I spent my Ph.D. years focused on the technical 'what,' but my career has been defined by the 'how.'"
               </p>
               
-              <p className="max-w-4xl text-white font-medium italic leading-relaxed">
-                Beyond the research, what drives me is the "Aha" moment in a conversation with a customer, that point where the complexity fades away and they realize exactly how the system solves their problem. My work is about building toward that moment: turning research-grade computation into high-integrity infrastructure that actually works for people.
-              </p>
+              <div className="text-lg md:text-xl text-slate-400 font-light leading-relaxed pl-1 md:pl-10 space-y-8">
+                <p>
+                  Most people can build a model; very few can ship one that survives a production environment with regulated data and enterprise scale. I went back for my MBA because I realized that the hardest problems in AI aren't just technical—they’re organizational and strategic.
+                </p>
+                
+                <p className="text-white font-medium italic leading-relaxed">
+                  Beyond the research, what drives me is the "Aha" moment in a conversation with a customer, that point where the complexity fades away and they realize exactly how the system solves their problem. My work is about building toward that moment: turning research-grade computation into high-integrity infrastructure that actually works for people.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* SECTION 3: EDUCATION & MEDIA (Original Background) */}
+        {/* SECTION 3: EDUCATION & MEDIA (Remaining Unchanged) */}
         <div className="grid lg:grid-cols-2 gap-20 mb-32">
           {/* Education Block */}
           <div className="space-y-12">
@@ -217,7 +232,7 @@ const HomeView = ({ setTab }) => (
                 </div>
               </a>
 
-              <a href="https://www.youtube.com/@MLWithRamin" target="_blank" rel="noreferrer" className="p-12 bg-white/[0.02] border border-white/10 rounded-[70px] block hover:bg-white/10 transition-all group shadow-2xl text-left">
+              <a href="https://www.youtube.com/@MLWithRamin" target="_blank" rel="noreferrer" className="p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[70px] block hover:bg-white/10 transition-all group shadow-2xl text-left">
                  <Youtube className="text-red-600 mb-10" size={80} />
                  <h4 className="text-white font-black uppercase italic tracking-widest text-4xl mb-8 leading-none tracking-tighter">ML With Ramin</h4>
                  <p className="text-slate-400 text-2xl font-extralight italic">Educational platform reaching 1k+ annual students globally.</p>
