@@ -386,7 +386,7 @@ const ExpoView = () => {
           <div className="p-12 md:p-16 bg-purple-700/10 border border-purple-500/20 rounded-[60px] shadow-2xl group">
             <div className="flex items-center gap-6 mb-10">
               <GoogleCloudLogo size={70} />
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase italic text-purple-400 tracking-tighter leading-none">Google Partnership</h3>
+              <h3 className="text-3xl md:text-4xl lg:text-4xl font-black text-white uppercase italic text-purple-400 tracking-tighter leading-none">Google Partnership</h3>
             </div>
             <p className="text-xl md:text-2xl text-slate-300 italic font-extralight leading-relaxed italic">Recognized and formally supported by Google Cloud. Season 5 hosted at Google Cambridge.</p>
           </div>
@@ -402,7 +402,7 @@ const ExpoView = () => {
             <div key={i} className="aspect-square bg-white/[0.02] border border-white/5 rounded-[60px] flex flex-col items-center justify-center text-center p-10 border-l-8 border-l-purple-500 shadow-2xl hover:border-white/10 transition-all">
               <div className="flex flex-col items-center gap-6">
                 {stat.logo && <GoogleCloudLogo size={60} />}
-                <span className="text-5xl md:text-6xl font-black text-white tracking-tighter italic uppercase">{stat.val}</span>
+                <span className="text-5xl md:text-4xl font-black text-white tracking-tighter italic uppercase">{stat.val}</span>
               </div>
               <span className="text-[10px] md:text-xs text-slate-500 font-black uppercase tracking-widest mt-6 italic">{stat.label}</span>
             </div>
@@ -475,11 +475,11 @@ const BackgroundView = () => (
         </h3>
         <div className="p-16 md:p-20 bg-white/[0.02] border border-white/10 rounded-[80px] relative overflow-hidden shadow-2xl group">
           <div className="border-l-8 border-emerald-500 pl-12 mb-16 group-hover:border-emerald-400 transition-colors">
-            <h4 className="text-4xl md:text-5xl font-black italic text-white uppercase leading-none mb-6 tracking-tighter leading-none tracking-tighter">Ph.D. CS / IE</h4>
+            <h4 className="text-4xl md:text-4xl font-black italic text-white uppercase leading-none mb-6 tracking-tighter leading-none tracking-tighter">Ph.D. CS / IE</h4>
             <p className="text-slate-500 font-black uppercase text-sm md:text-base tracking-widest italic">Northeastern University | 2020.</p>
           </div>
           <div className="border-l-8 border-blue-500 pl-12 mb-16 group-hover:border-blue-400 transition-colors">
-            <h4 className="text-4xl md:text-5xl font-black italic text-white uppercase leading-none mb-6 tracking-tighter leading-none tracking-tighter">MBA Candidate</h4>
+            <h4 className="text-4xl md:text-4xl font-black italic text-white uppercase leading-none mb-6 tracking-tighter leading-none tracking-tighter">MBA Candidate</h4>
             <p className="text-slate-500 font-black uppercase text-sm md:text-base tracking-widest italic">Northeastern University | Expected 2027.</p>
           </div>
           <div className="mt-20 pt-16 border-t border-white/5 space-y-12 text-slate-400 text-xl md:text-2xl italic font-extralight">
@@ -496,7 +496,7 @@ const BackgroundView = () => (
         <div className="space-y-12">
           <a href="https://www.youtube.com/watch?v=vMQOZDuqOVI" target="_blank" rel="noreferrer" className="p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[70px] block hover:bg-white/10 transition-all group overflow-hidden shadow-2xl">
             <div className="flex justify-between items-start mb-12"><Youtube className="text-red-600 group-hover:scale-110 transition-transform shadow-2xl" size={100} /><span className="text-emerald-500 font-black uppercase text-xs md:text-sm tracking-widest border border-emerald-500/20 px-8 py-3 rounded-full backdrop-blur-2xl italic shadow-2xl">Featured Talk | 2024</span></div>
-            <h4 className="text-white font-black uppercase italic text-3xl md:text-4xl lg:text-5xl mb-10 leading-none tracking-tighter">Career Resilience in the Age of AI | Northeastern</h4>
+            <h4 className="text-white font-black uppercase italic text-3xl md:text-4xl lg:text-3xl mb-10 leading-none tracking-tighter">Career Resilience in the Age of AI | Northeastern</h4>
             <div className="flex items-center gap-5 text-slate-500 group-hover:text-white transition-colors shadow-lg"><PlayCircle size={32} /> <span className="text-sm md:text-base font-black uppercase tracking-widest italic">Watch Full Presentation</span></div>
           </a>
           
@@ -504,25 +504,25 @@ const BackgroundView = () => (
             <img src={practicalAI340} alt="Practical AI 340" className="w-40 h-40 md:w-48 md:h-48 rounded-[40px] object-cover grayscale group-hover:grayscale-0 transition-all shadow-2xl group-hover:scale-105" />
             <div>
               <span className="text-emerald-500 font-black uppercase text-xs md:text-sm tracking-[0.4em] mb-6 block italic">Practical AI Episode 340</span>
-              <h4 className="text-2xl md:text-3xl lg:text-4xl font-black text-white uppercase italic leading-none tracking-tighter">The AI engineer skills gap</h4>
+              <h4 className="text-2xl md:text-3xl lg:text-3xl font-black text-white uppercase italic leading-none tracking-tighter">The AI engineer skills gap</h4>
             </div>
           </a>
           <a href="https://practicalai.fm/273" target="_blank" rel="noreferrer" className="flex items-center gap-10 p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[70px] hover:bg-white/5 transition-all group shadow-2xl">
             <img src={practicalAI273} alt="Practical AI 340" className="w-40 h-40 md:w-48 md:h-48 rounded-[40px] object-cover grayscale group-hover:grayscale-0 transition-all shadow-2xl group-hover:scale-105" />
             <div>
               <span className="text-emerald-500 font-black uppercase text-xs md:text-sm tracking-[0.4em] mb-6 block italic">Practical AI Episode 273</span>
-              <h4 className="text-2xl md:text-3xl lg:text-4xl font-black text-white uppercase italic leading-none tracking-tighter">Finding sensitive data with edge models</h4>
+              <h4 className="text-2xl md:text-3xl lg:text-3xl font-black text-white uppercase italic leading-none tracking-tighter">Finding sensitive data with edge models</h4>
             </div>
           </a>
           <a href="https://www.youtube.com/@MLWithRamin" target="_blank" rel="noreferrer" className="p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[70px] block hover:bg-white/10 transition-all group overflow-hidden shadow-2xl">
              <Youtube className="text-red-600 mb-10 group-hover:rotate-12 transition-transform duration-700 shadow-2xl" size={80} />
-             <h4 className="text-white font-black uppercase italic tracking-widest text-4xl md:text-5xl lg:text-6xl mb-8 leading-none tracking-tighter">ML With Ramin</h4>
-             <p className="text-slate-400 text-2xl md:text-3xl font-extralight italic leading-snug">Educational platform reaching 1k+ annual students globally.</p>
+             <h4 className="text-white font-black uppercase italic tracking-widest text-4xl md:text-5xl lg:text-5xl mb-8 leading-none tracking-tighter">ML With Ramin</h4>
+             <p className="text-slate-400 text-2xl md:text-2xl font-extralight italic leading-snug">Educational platform reaching 1k+ annual students globally.</p>
           </a>
         </div>
       </div>
     </div>
-    <div className="p-20 md:p-14 lg:p-12 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-[120px] text-[#020617] font-black text-center uppercase tracking-[0.5em] shadow-2xl shadow-emerald-500/30 text-4xl md:text-5xl lg:text-2xl italic leading-none">Principal Leader • Scientist • Strategic Advisor</div>
+    <div className="p-15 md:p-10 lg:p-5 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-[120px] text-[#020617] font-black text-center uppercase tracking-[0.5em] shadow-2xl shadow-emerald-500/30 text-3xl md:text-4xl lg:text-xl italic leading-none">Principal Leader • Scientist • Strategic Advisor</div>
   </div>
 );
 
