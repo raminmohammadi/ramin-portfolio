@@ -19,7 +19,7 @@ import northeasternLogo from './assets/northeastern_logo.png';
 import practicalAI340 from './assets/practical_ai_340.png';
 import practicalAI273 from './assets/practical_ai_273.png';
 import profilePic from './assets/Ramin-Mohammadi.png';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/react';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState('home');
