@@ -106,6 +106,7 @@ const App = () => {
       </footer>
 
       <SpeedInsights />
+      <Analytics />
     </div>
   );
 };
