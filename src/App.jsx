@@ -559,6 +559,13 @@ const ProjectsView = () => {
     { name: 'NLP', path: 'raminmohammadi/NLP', desc: 'Language Processing' },
   ];
 
+  // Helper to fix relative image paths
+  const transformImageUri = (uri) => {
+    if (!selectedProject || uri.startsWith('http')) return uri;
+    // Converts ./docs/img.png to https://raw.githubusercontent.com/user/repo/main/docs/img.png
+    return `https://raw.githubusercontent.com/${selectedProject}/main/${uri.replace(/^\.\//, '')}`;
+  };
+
   const fetchReadme = async (repoPath) => {
     setLoading(true);
     setSelectedProject(repoPath);
@@ -586,7 +593,6 @@ const ProjectsView = () => {
           <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic mb-0 leading-none">Hobby Projects.</h1>
         </div>
         
-        {/* NEW: PYPI PACKAGE SECTION */}
         <a 
           href="https://pypi.org/project/gradientblueprint/" 
           target="_blank" 
@@ -655,9 +661,13 @@ const ProjectsView = () => {
                 prose-ul:list-disc prose-ol:list-decimal
                 prose-pre:bg-black/50 prose-pre:border prose-pre:border-white/10 prose-pre:rounded-2xl prose-pre:p-6
                 prose-code:text-emerald-400 prose-code:bg-emerald-500/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-                prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline">
+                prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline
+                prose-img:rounded-3xl prose-img:border prose-img:border-white/10 prose-img:shadow-2xl prose-img:mx-auto">
                 
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                <ReactMarkdown 
+                  remarkPlugins={[remarkGfm]}
+                  transformImageUri={transformImageUri}
+                >
                   {readmeContent}
                 </ReactMarkdown>
               </div>
