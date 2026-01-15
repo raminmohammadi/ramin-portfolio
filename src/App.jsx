@@ -564,15 +564,16 @@ const ProjectsView = () => {
     setLoading(true);
     setSelectedProject(repoPath);
     try {
+      // Fetching from GitHub Raw
       const response = await fetch(`https://raw.githubusercontent.com/${repoPath}/main/README.md`);
+      let text = "";
       if (response.ok) {
-        const text = await response.text();
-        setReadmeContent(text);
+        text = await response.text();
       } else {
         const altResponse = await fetch(`https://raw.githubusercontent.com/${repoPath}/master/README.md`);
-        const altText = await altResponse.text();
-        setReadmeContent(altResponse.ok ? altText : "README not found.");
+        text = altResponse.ok ? await altResponse.text() : "README not found.";
       }
+      setReadmeContent(text);
     } catch (err) {
       setReadmeContent("Error loading project details.");
     }
@@ -581,13 +582,13 @@ const ProjectsView = () => {
 
   return (
     <div className="pt-48 pb-32 px-8 animate-in slide-in-from-bottom-10 duration-700 max-w-7xl mx-auto">
+      {/* HEADER & PYPI SECTION */}
       <div className="mb-20 border-b border-white/5 pb-12 flex flex-col md:flex-row justify-between items-end gap-8">
         <div>
           <h2 className="text-[10px] font-bold text-emerald-500 uppercase tracking-[0.5em] mb-4">Laboratory</h2>
           <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic mb-0 leading-none">Hobby Projects.</h1>
         </div>
         
-        {/* NEW: PYPI PACKAGE SECTION */}
         <a 
           href="https://pypi.org/project/gradientblueprint/" 
           target="_blank" 
@@ -602,13 +603,14 @@ const ProjectsView = () => {
           </div>
           <h3 className="text-xl font-black text-white uppercase italic mb-2 tracking-tight group-hover:text-blue-400 transition-colors">GradientBlueprint</h3>
           <p className="text-xs text-slate-500 italic mb-4">Official Python package for streamlined ML architectural patterns.</p>
-          <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+          <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono">
             <Terminal size={14} /> pip install gradientblueprint
           </div>
         </a>
       </div>
 
       <div className="grid lg:grid-cols-12 gap-12">
+        {/* SIDEBAR: PROJECT LIST */}
         <div className="lg:col-span-4 space-y-4">
           {repos.map((repo) => (
             <button
@@ -631,6 +633,7 @@ const ProjectsView = () => {
           ))}
         </div>
 
+        {/* MAIN CONTENT: README VIEWER */}
         <div className="lg:col-span-8 bg-[#020617] border border-white/10 rounded-[40px] overflow-hidden flex flex-col h-[700px] shadow-2xl">
           {selectedProject && (
             <div className="bg-white/5 px-8 py-4 border-b border-white/5 flex justify-between items-center shrink-0">
@@ -645,20 +648,48 @@ const ProjectsView = () => {
             {loading ? (
               <div className="flex flex-col items-center justify-center h-full gap-4">
                 <div className="w-12 h-12 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin" />
-                <span className="text-emerald-500 font-black italic uppercase text-xs tracking-widest">Fetching Repository...</span>
+                <span className="text-emerald-500 font-black italic uppercase text-xs tracking-widest">Fetching Data...</span>
               </div>
             ) : selectedProject ? (
               <div className="prose prose-invert max-w-none 
-                prose-headings:font-black prose-headings:italic prose-headings:tracking-tighter prose-headings:uppercase prose-headings:text-white prose-headings:mb-6 prose-headings:mt-10
-                prose-h1:text-4xl prose-h2:text-2xl prose-h2:border-b prose-h2:border-white/10 prose-h2:pb-2
-                prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-6
-                prose-li:text-slate-300 prose-li:my-1
-                prose-ul:list-disc prose-ol:list-decimal
-                prose-pre:bg-black/50 prose-pre:border prose-pre:border-white/10 prose-pre:rounded-2xl prose-pre:p-6
-                prose-code:text-emerald-400 prose-code:bg-emerald-500/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-                prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline">
+                prose-headings:font-black prose-headings:italic prose-headings:tracking-tighter prose-headings:uppercase prose-headings:text-white
+                prose-p:text-slate-300 prose-p:leading-relaxed
+                prose-pre:bg-black/50 prose-pre:border prose-pre:border-white/10 prose-pre:rounded-2xl
+                prose-code:text-emerald-400 prose-code:bg-emerald-500/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+                prose-img:mx-auto prose-img:rounded-3xl prose-img:border prose-img:border-white/10">
                 
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                <ReactMarkdown 
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    // FIX: Re-route GitHub images to Raw CDN
+                    img: ({ node, src, alt, ...props }) => {
+                      let finalSrc = src;
+                      if (src && !src.startsWith('http')) {
+                        const cleanPath = src.startsWith('./') ? src.slice(2) : src;
+                        finalSrc = `https://raw.githubusercontent.com/${selectedProject}/main/${cleanPath}`;
+                      }
+                      return (
+                        <img 
+                          {...props} 
+                          src={finalSrc} 
+                          alt={alt} 
+                          className="rounded-3xl border border-white/10 shadow-2xl mx-auto my-8 block max-w-full h-auto"
+                          onError={(e) => {
+                            if (finalSrc.includes('/main/')) {
+                              e.target.src = finalSrc.replace('/main/', '/master/');
+                            }
+                          }}
+                        />
+                      );
+                    },
+                    // Formatting pre tags for trees
+                    pre: ({ node, ...props }) => (
+                      <div className="overflow-x-auto bg-black/50 border border-white/10 rounded-2xl p-6 my-6 font-mono">
+                        <pre {...props} className="m-0 bg-transparent border-0 p-0 text-sm" />
+                      </div>
+                    )
+                  }}
+                >
                   {readmeContent}
                 </ReactMarkdown>
               </div>
@@ -666,7 +697,7 @@ const ProjectsView = () => {
               <div className="flex flex-col items-center justify-center h-full text-center py-20">
                 <Terminal size={40} className="text-slate-700 mb-8" />
                 <h3 className="text-2xl font-black text-white italic uppercase mb-4">Select a Repository</h3>
-                <p className="text-slate-500 max-w-xs mx-auto font-light italic text-xl">
+                <p className="text-slate-500 max-w-xs mx-auto font-light italic text-xl leading-snug">
                   Explore technical documentation and engineering patterns pulled directly from my GitHub environment.
                 </p>
               </div>
