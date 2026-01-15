@@ -559,10 +559,9 @@ const ProjectsView = () => {
     { name: 'NLP', path: 'raminmohammadi/NLP', desc: 'Language Processing' },
   ];
 
-  // Helper to fix relative image paths
+  // Helper to fix relative image paths by pointing them to GitHub's raw content server
   const transformImageUri = (uri) => {
     if (!selectedProject || uri.startsWith('http')) return uri;
-    // Converts ./docs/img.png to https://raw.githubusercontent.com/user/repo/main/docs/img.png
     return `https://raw.githubusercontent.com/${selectedProject}/main/${uri.replace(/^\.\//, '')}`;
   };
 
@@ -593,6 +592,7 @@ const ProjectsView = () => {
           <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic mb-0 leading-none">Hobby Projects.</h1>
         </div>
         
+        {/* PYPI PACKAGE SECTION */}
         <a 
           href="https://pypi.org/project/gradientblueprint/" 
           target="_blank" 
@@ -614,6 +614,7 @@ const ProjectsView = () => {
       </div>
 
       <div className="grid lg:grid-cols-12 gap-12">
+        {/* Sidebar: Project Selection */}
         <div className="lg:col-span-4 space-y-4">
           {repos.map((repo) => (
             <button
@@ -636,6 +637,7 @@ const ProjectsView = () => {
           ))}
         </div>
 
+        {/* Main Content: Markdown Renderer */}
         <div className="lg:col-span-8 bg-[#020617] border border-white/10 rounded-[40px] overflow-hidden flex flex-col h-[700px] shadow-2xl">
           {selectedProject && (
             <div className="bg-white/5 px-8 py-4 border-b border-white/5 flex justify-between items-center shrink-0">
