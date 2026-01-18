@@ -19,6 +19,14 @@ import northeasternLogo from './assets/northeastern_logo.png';
 import practicalAI340 from './assets/practical_ai_340.png';
 import practicalAI273 from './assets/practical_ai_273.png';
 import profilePic from './assets/Ramin-Mohammadi.png';
+import intelIgnite1 from './assets/ignite.jpeg';
+import intelIgnite2 from './assets/ignite2.jpeg'
+// New Assets for Teaching & Studio
+import teachingImg1 from './assets/Teaching.jpeg';
+import teachingImg2 from './assets/Teaching2.jpeg';
+import studioImg from './assets/Studio.jpeg';
+import studioVideo1 from './assets/IMG_5873.MOV';
+import studioVideo2 from './assets/20250131_134429.mp4';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
@@ -104,7 +112,7 @@ const App = () => {
           </div>
         </div>
       </footer>
-
+      
       <SpeedInsights />
       <Analytics />
     </div>
@@ -237,6 +245,15 @@ const HomeView = ({ setTab }) => (
                 </div>
               </a>
 
+              <a href="https://practicalai.fm/273" target="_blank" rel="noreferrer" className="flex items-center gap-10 p-12 bg-white/[0.02] border border-white/10 rounded-[70px] hover:bg-white/5 transition-all group shadow-2xl text-left">
+                <img src={practicalAI273} alt="Practical AI" className="w-40 h-40 rounded-[40px] object-cover grayscale group-hover:grayscale-0 shadow-2xl" />
+                <div>
+                  <span className="text-emerald-500 font-black uppercase text-xs tracking-[0.4em] mb-6 block italic">Practical AI Episode 273</span>
+                  <h4 className="text-2xl font-black text-white uppercase italic leading-none tracking-tighter">Using edge models to find sensitive data
+                  </h4>
+                </div>
+              </a>
+
               <a href="https://www.youtube.com/@MLWithRamin" target="_blank" rel="noreferrer" className="p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[70px] block hover:bg-white/10 transition-all group shadow-2xl text-left">
                  <Youtube className="text-red-600 mb-10" size={80} />
                  <h4 className="text-white font-black uppercase italic tracking-widest text-4xl mb-8 leading-none tracking-tighter">ML With Ramin</h4>
@@ -254,138 +271,200 @@ const HomeView = ({ setTab }) => (
     </section>
   </div>
 );
+/* --- VIEW: EXECUTIVE LEADERSHIP (All 3 Chapters) --- */
+const ExecView = () => {
+  const [igniteIndex, setIgniteIndex] = useState(0);
+  const ignitePhotos = [intelIgnite1, intelIgnite2];
 
-const ExecView = () => (
-  <div className="pt-60 pb-40 px-8 animate-in slide-in-from-bottom duration-1000 max-w-7xl mx-auto">
-    <div className="text-center md:text-left mb-32 border-b border-white/5 pb-20">
-      <h2 className="text-xs md:text-sm font-black text-emerald-500 uppercase tracking-[0.6em] mb-6">Strategy & Growth</h2>
-      <h1 className="text-6xl md:text-[7.65rem] font-black text-white tracking-tighter uppercase italic mb-12 leading-none">
-        Executive <br /> Leadership.
-      </h1>
-      <p className="text-2xl md:text-3xl text-slate-400 max-w-3xl font-light italic leading-relaxed border-l-2 border-emerald-500 pl-10">
-        Transforming business priorities into scalable, production-hardened AI frameworks.
-      </p>
-    </div>
-    
-    <div className="space-y-16">
-      {[
-        { 
-          role: "Lead Principal AI Engineer | iBase-t", 
-          time: "June 2025 — Present | California", 
-          desc: "Directing high-performing AI organization. Secured major enterprise customers via Solumina-AI.",
-          gradient: "from-emerald-500 via-emerald-400 to-blue-500",
-          icon: <Target className="size-24 md:size-32 lg:size-40" />
-        },
-        { 
-          role: "ML Manager - Principal ML Engineer | Tausight", 
-          time: "2019 — 2025 | Massachusetts", 
-          desc: "Managed the full ML lifecycle and scaled team from inception to maturity. Optimized training efficiency by 40% for HIPAA-compliant systems.",
-          gradient: "from-blue-600 via-blue-400 to-emerald-500",
-          icon: <TrendingUp className="size-24 md:size-32 lg:size-40" />
-        },
-        { 
-          role: "Intel Ignite Alumnus", 
-          time: "2024 | Global", 
-          desc: "Focused on scaling high-growth deep tech ventures and fundraising strategy for seed-to-series-A AI startups.",
-          gradient: "from-purple-600 via-blue-500 to-emerald-400",
-          icon: <Zap className="size-24 md:size-32 lg:size-40" />
-        }
-      ].map((job, i) => (
-        <div key={i} className="relative p-[1px] rounded-[60px] overflow-hidden group shadow-2xl">
-          <div className={`absolute inset-0 bg-gradient-to-r ${job.gradient} opacity-20 group-hover:opacity-100 transition-opacity duration-700`} />
-          <div className="relative p-12 md:p-16 lg:p-20 bg-[#020617] rounded-[59px] h-full transition-all duration-500 group-hover:bg-[#020617]/90">
-            <div className="flex flex-col lg:flex-row justify-between items-start gap-10 relative z-10">
-              <div className="max-w-4xl">
-                <span className="text-slate-500 font-black text-xs md:text-sm uppercase tracking-[0.5em] block mb-4 underline decoration-white/10 underline-offset-8">
-                  {job.time}
-                </span>
-                <h3 className={`text-4xl md:text-5xl lg:text-6xl font-black italic tracking-tighter uppercase mb-8 leading-none text-transparent bg-clip-text bg-gradient-to-r ${job.gradient}`}>
-                  {job.role}
-                </h3>
-                <p className="text-2xl md:text-3xl xl:text-4xl text-slate-300 leading-snug font-extralight italic mb-10">
-                  {job.desc}
-                </p>
-                <div className="flex gap-4">
-                   <div className="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors shadow-lg">
-                      AI Strategy
-                   </div>
-                   <div className="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors shadow-lg">
-                      Industrial Scale
-                   </div>
+  const experience = [
+    { 
+      role: "Lead Principal AI Engineer | iBase-t", 
+      time: "June 2025 — Present | California", 
+      desc: "Directing high-performing AI organization. Secured major enterprise customers via Solumina-AI.",
+      gradient: "from-emerald-500 via-emerald-400 to-blue-500",
+      icon: <Target className="size-24 md:size-40" />,
+      tags: ["AI Strategy", "Industrial Scale"]
+    },
+    { 
+      role: "ML Manager - Principal ML Engineer | Tausight", 
+      time: "2019 — 2025 | Massachusetts", 
+      desc: "Managed the full ML lifecycle and scaled team from inception to maturity. Optimized training efficiency by 40% for HIPAA-compliant systems.",
+      gradient: "from-blue-600 via-blue-400 to-emerald-500",
+      icon: <TrendingUp className="size-24 md:size-40" />,
+      tags: ["Healthcare AI", "MLOps"]
+    },
+    { 
+      role: "Intel Ignite Alumnus", 
+      time: "2024 | Global", 
+      desc: "Focused on scaling high-growth deep tech ventures and fundraising strategy for seed-to-series-A AI startups.",
+      gradient: "from-purple-600 via-blue-500 to-emerald-400",
+      icon: <Zap className="size-24 md:size-40" />,
+      tags: ["Deep Tech", "Ventures"],
+      isIgnite: true 
+    }
+  ];
+
+  return (
+    <div className="pt-60 pb-40 px-8 animate-in slide-in-from-bottom duration-1000 max-w-7xl mx-auto">
+      <div className="text-center md:text-left mb-32 border-b border-white/5 pb-20">
+        <h2 className="text-xs md:text-sm font-black text-emerald-500 uppercase tracking-[0.6em] mb-6">Strategy & Growth</h2>
+        <h1 className="text-6xl md:text-[7.65rem] font-black text-white tracking-tighter uppercase italic mb-12 leading-none">Executive Leadership.</h1>
+      </div>
+      
+      <div className="space-y-16">
+        {experience.map((job, i) => (
+          <div key={i} className="relative p-[1px] rounded-[60px] overflow-hidden group shadow-2xl">
+            <div className={`absolute inset-0 bg-gradient-to-r ${job.gradient} opacity-20 group-hover:opacity-100 transition-opacity duration-700`} />
+            <div className="relative p-12 md:p-16 bg-[#020617] rounded-[59px] transition-all duration-500 group-hover:bg-[#020617]/90">
+              <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
+                <div className="max-w-4xl w-full">
+                  <span className="text-slate-500 font-black text-xs uppercase tracking-[0.5em] block mb-4 underline decoration-white/10 underline-offset-8">{job.time}</span>
+                  <h3 className={`text-4xl md:text-6xl font-black italic tracking-tighter uppercase mb-8 text-transparent bg-clip-text bg-gradient-to-r ${job.gradient}`}>{job.role}</h3>
+                  <p className="text-2xl md:text-3xl text-slate-300 leading-snug font-extralight italic mb-10">{job.desc}</p>
+                  
+                  <div className="flex gap-4 mb-10">
+                    {job.tags.map((tag, idx) => (
+                      <div key={idx} className="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase text-slate-400 group-hover:text-white transition-colors">{tag}</div>
+                    ))}
+                  </div>
+
+                  {job.isIgnite && (
+                    <div className="relative rounded-[40px] overflow-hidden border border-white/10 aspect-video shadow-2xl">
+                      <img src={ignitePhotos[igniteIndex]} alt="Intel Ignite" className="w-full h-full object-cover transition-all duration-700" />
+                      <div className="absolute inset-0 flex items-center justify-between px-6">
+                        <button onClick={() => setIgniteIndex(prev => prev === 0 ? 1 : 0)} className="p-4 bg-black/60 rounded-full text-white hover:bg-purple-600 transition-all"><ChevronLeft size={24} /></button>
+                        <button onClick={() => setIgniteIndex(prev => prev === 0 ? 1 : 0)} className="p-4 bg-black/60 rounded-full text-white hover:bg-purple-600 transition-all"><ChevronRight size={24} /></button>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-              <div className="text-slate-800 opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700 hidden lg:block shrink-0">
-                {job.icon}
+                <div className="text-slate-800 opacity-20 group-hover:opacity-40 transition-all hidden lg:block">{job.icon}</div>
               </div>
             </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-);
-
-const TeachingView = () => (
-  <div className="pt-60 pb-40 px-8 animate-in slide-in-from-bottom duration-1000 max-w-7xl mx-auto">
-    <div className="text-center mb-32 border-b border-white/5 pb-20">
-      <h2 className="text-xs md:text-sm font-black text-emerald-500 uppercase tracking-[0.6em] mb-6">Academic Leadership</h2>
-      <h1 className="text-6xl md:text-[8rem] font-black text-white tracking-tighter uppercase italic leading-[0.85] mb-12">
-        Shaping the <br /> Industry.
-      </h1>
-      <p className="text-2xl md:text-3xl text-slate-400 max-w-3xl mx-auto font-light italic leading-relaxed">
-        Empowering high-potential talent to move beyond modeling and master the engineering discipline required to build and ship end-to-end AI systems.
-      </p>
-    </div>
-
-    <div className="p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[60px] mb-12 shadow-2xl">
-      <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-12">
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-6 mb-10">
-            <img src={northeasternLogo} alt="Northeastern" className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 grayscale brightness-200" />
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-emerald-400 uppercase italic tracking-tighter leading-none">Adjunct Professor | Northeastern University</h3>
-          </div>
-          <p className="text-2xl md:text-3xl text-slate-300 font-extralight italic leading-relaxed mb-10">
-            Designing PhD-level curricula for Generative AI, Machine Learning, NLP and MLOps. Established the first university level MLOps course in the U.S.
-          </p>
-        </div>
-        <GraduationCap className="text-emerald-500 opacity-20 hidden lg:block" size={120} />
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {["MLOps", "Generative AI", "NLP Foundations", "Statistical Learning"].map((course, i) => (
-          <div key={i} className="p-8 md:p-10 bg-white/5 rounded-3xl border border-white/5 text-center group hover:bg-emerald-500/10 transition-all shadow-xl">
-            <p className="text-white font-bold italic text-base md:text-lg lg:text-xl uppercase group-hover:text-emerald-400 tracking-tight leading-none">{course}</p>
           </div>
         ))}
       </div>
     </div>
+  );
+};
 
-    <div className="p-12 md:p-16 bg-blue-600/5 border border-blue-500/20 rounded-[60px] relative overflow-hidden group shadow-2xl">
-      <div className="absolute top-0 right-0 p-12 opacity-5 group-hover:rotate-12 transition-transform duration-700">
-        <Globe size={250} />
+/* --- SUB-VIEW: TEACHING (Updated) --- */
+const TeachingView = () => {
+  const [neuIndex, setNeuIndex] = React.useState(0);
+  const [studioIndex, setStudioIndex] = React.useState(0);
+
+  const neuImages = [teachingImg1, teachingImg2];
+  const studioMedia = [studioVideo1];
+
+  return (
+    <div className="pt-60 pb-40 px-8 animate-in slide-in-from-bottom duration-1000 max-w-7xl mx-auto">
+      {/* Header Section */}
+      <div className="text-center mb-32 border-b border-white/5 pb-20">
+        <h2 className="text-xs md:text-sm font-black text-emerald-500 uppercase tracking-[0.6em] mb-6">Academic Leadership</h2>
+        <h1 className="text-6xl md:text-[8rem] font-black text-white tracking-tighter uppercase italic leading-[0.85] mb-12">
+          Shaping the <br /> Industry.
+        </h1>
+        <p className="text-2xl md:text-3xl text-slate-400 max-w-3xl mx-auto font-light italic leading-relaxed">
+          Empowering high-potential talent to move beyond modeling and master the engineering discipline required to build and ship end-to-end AI systems.
+        </p>
       </div>
-      <div className="relative z-10">
-        <div className="flex items-center gap-6 mb-10">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Coursera-Logo_600x600.svg" alt="Coursera" className="w-16 h-16 shadow-2xl" />
-          <a href="https://www.coursera.org/instructor/~162569871" target="_blank" rel="noreferrer" className="group/link flex items-center gap-4">
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-blue-400 uppercase italic hover:text-blue-300 transition-colors tracking-tighter">Teaching | Coursera</h3>
-            <ExternalLink size={24} className="text-blue-500" />
-          </a>
+
+      {/* Section: Northeastern University */}
+      <div className="p-12 md:p-16 bg-white/[0.02] border border-white/10 rounded-[60px] mb-12 shadow-2xl">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-12">
+          <div className="max-w-4xl w-full">
+            <div className="flex items-center gap-6 mb-10">
+              <img src={northeasternLogo} alt="Northeastern" className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 grayscale brightness-200" />
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-emerald-400 uppercase italic tracking-tighter leading-none">Adjunct Professor | Northeastern University</h3>
+            </div>
+            <p className="text-2xl md:text-3xl text-slate-300 font-extralight italic leading-relaxed mb-10">
+              Designing PhD-level curricula for Generative AI, Machine Learning, NLP and MLOps. Established the first university level MLOps course in the U.S.
+            </p>
+
+            {/* SIDE-BY-SIDE IMAGES (Filling the box together) */}
+            <div className="relative w-full lg:w aspect-[25/9] rounded-[32px] overflow-hidden border border-white/10 group shadow-2xl mb-10">
+              <div className="grid grid-cols-2 h-full w-full gap-[2px] bg-white/10"> 
+                <img 
+                  src={teachingImg1} 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+                  alt="Northeastern Lecture"
+                />
+                <img 
+                  src={teachingImg2} 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+                  alt="Northeastern Mentorship"
+                />
+              </div>
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 to-transparent" />
+            </div>
+          </div>
+          <GraduationCap className="text-emerald-500 opacity-20 hidden lg:block" size={120} />
         </div>
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          <a href="https://www.coursera.org/learn/generative-ai-foundations-and-concepts" target="_blank" rel="noreferrer" className="p-10 md:p-12 bg-[#020617]/50 rounded-[40px] border border-white/5 hover:border-blue-400/30 transition-all shadow-2xl group/card">
-            <h4 className="text-white font-black mb-6 uppercase text-xl lg:text-2xl tracking-widest italic flex justify-between items-center leading-none">GenAI Foundations <ArrowRight size={24} /></h4>
-            <p className="text-slate-400 text-lg lg:text-xl italic leading-relaxed font-light">Strategic implementation and core architectural foundations for industrial GenAI.</p>
-          </a>
-          <a href="https://www.coursera.org/learn/nlp-in-engineering-concepts--real-world-applications" target="_blank" rel="noreferrer" className="p-10 md:p-12 bg-[#020617]/50 rounded-[40px] border border-white/5 hover:border-blue-400/30 transition-all shadow-2xl group/card">
-            <h4 className="text-white font-black mb-6 uppercase text-xl lg:text-2xl tracking-widest italic flex justify-between items-center leading-none">NLP in Engineering <ArrowRight size={24} /></h4>
-            <p className="text-slate-400 text-lg lg:text-xl italic leading-relaxed font-light">Applying NLP frameworks to real-world production environments.</p>
-          </a>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {["MLOps", "Generative AI", "NLP Foundations", "Statistical Learning"].map((course, i) => (
+            <div key={i} className="p-8 md:p-10 bg-white/5 rounded-3xl border border-white/5 text-center group hover:bg-emerald-500/10 transition-all shadow-xl">
+              <p className="text-white font-bold italic text-base md:text-lg lg:text-xl uppercase group-hover:text-emerald-400 tracking-tight leading-none">{course}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Section: Coursera */}
+      <div className="p-12 md:p-16 bg-blue-600/5 border border-blue-500/20 rounded-[60px] relative overflow-hidden group shadow-2xl">
+        <div className="absolute top-0 right-0 p-12 opacity-5 group-hover:rotate-12 transition-transform duration-700">
+          <Globe size={250} />
+        </div>
+        <div className="relative z-10">
+          <div className="flex items-center gap-6 mb-10">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Coursera-Logo_600x600.svg" alt="Coursera" className="w-16 h-16 shadow-2xl" />
+            <a href="https://www.coursera.org/instructor/~162569871" target="_blank" rel="noreferrer" className="group/link flex items-center gap-4">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-blue-400 uppercase italic hover:text-blue-300 transition-colors tracking-tighter">Teaching | Coursera</h3>
+              <ExternalLink size={24} className="text-blue-500" />
+            </a>
+          </div>
+
+          {/* NEW: Studio Image + Single Frame Video Player */}
+          <div className="flex flex-col md:flex-row gap-8 mb-12">
+            <div className="w-full md:w-56 aspect-[4/5] rounded-[32px] overflow-hidden border border-white/10 shrink-0">
+              <img src={studioImg} alt="Studio" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
+            
+            <div className="relative flex-1 aspect-video rounded-[32px] overflow-hidden border border-white/10 bg-black/40 group/vid shadow-2xl">
+              <video 
+                key={studioMedia[studioIndex]} 
+                src={studioMedia[studioIndex]} 
+                controls 
+                className="w-full h-full object-cover opacity-90" 
+              />
+              {/* <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover/vid:opacity-100 transition-opacity">
+                <button onClick={() => setStudioIndex(studioIndex === 0 ? 1 : 0)} className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-blue-600 border border-white/10 transition-all">
+                  <ArrowRight size={20} className={studioIndex === 0 ? "" : "rotate-180"} />
+                </button>
+              </div> */}
+              <div className="absolute top-4 left-6 pointer-events-none">
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400 bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">
+                  Preview {studioIndex + 1}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            <a href="https://www.coursera.org/learn/generative-ai-foundations-and-concepts" target="_blank" rel="noreferrer" className="p-10 md:p-12 bg-[#020617]/50 rounded-[40px] border border-white/5 hover:border-blue-400/30 transition-all shadow-2xl group/card">
+              <h4 className="text-white font-black mb-6 uppercase text-xl lg:text-2xl tracking-widest italic flex justify-between items-center leading-none">GenAI Foundations <ArrowRight size={24} /></h4>
+              <p className="text-slate-400 text-lg lg:text-xl italic leading-relaxed font-light">Strategic implementation and core architectural foundations for industrial GenAI.</p>
+            </a>
+            <a href="https://www.coursera.org/learn/nlp-in-engineering-concepts--real-world-applications" target="_blank" rel="noreferrer" className="p-10 md:p-12 bg-[#020617]/50 rounded-[40px] border border-white/5 hover:border-blue-400/30 transition-all shadow-2xl group/card">
+              <h4 className="text-white font-black mb-6 uppercase text-xl lg:text-2xl tracking-widest italic flex justify-between items-center leading-none">NLP in Engineering <ArrowRight size={24} /></h4>
+              <p className="text-slate-400 text-lg lg:text-xl italic leading-relaxed font-light">Applying NLP frameworks to real-world production environments.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
-
+  );
+};
 
 /* --- SUB-VIEW: RESEARCH --- */
 const ResearchView = () => (
