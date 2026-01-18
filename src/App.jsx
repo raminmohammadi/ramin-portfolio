@@ -26,7 +26,6 @@ import teachingImg1 from './assets/Teaching.jpeg';
 import teachingImg2 from './assets/Teaching2.jpeg';
 import studioImg from './assets/Studio.jpeg';
 import studioVideo1 from './assets/IMG_5873.MOV';
-import studioVideo2 from './assets/20250131_134429.mp4';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
@@ -112,7 +111,7 @@ const App = () => {
           </div>
         </div>
       </footer>
-      
+
       <SpeedInsights />
       <Analytics />
     </div>
