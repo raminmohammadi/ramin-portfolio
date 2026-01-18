@@ -509,9 +509,9 @@ const ResearchView = () => (
     <div className="grid md:grid-cols-1 gap-12">
        {[
          { inst: "Research Assistant | MGH Institute (ITA)", date: "2015 – 2019", d: "Led development and validation of predictive models for Non-Alcoholic Steatohepatitis (NASH) using image processing over ultrasound imagery." },
-         { inst: "Data Scientist | Partners HealthCare", date: "2016 – 2017", d: "Developed hierarchical deep learning for readmission risk assessment, resulting in a 15% reduction for heart failure patients." },
          { inst: "Deep Learning Engineer | Mitsubishi (MERL)", date: "2019", d: "Real-time anomaly detection for satellite orbit maneuvers via VAEs and RL-based HVAC system optimization." },
          { inst: "Machine Learning Engineer | Philips", date: "2018", d: "Pioneered multimodal sensor fusion models for building automation and occupant counting sensors." },
+         { inst: "Data Scientist | Partners HealthCare", date: "2016 – 2017", d: "Developed hierarchical deep learning for readmission risk assessment, resulting in a 15% reduction for heart failure patients." },
         ].map((item, i) => (
          <div key={i} className="p-8 md:p-12 lg:p-12 bg-white/[0.02] border border-white/10 rounded-[60px] border-l-8 border-l-blue-900 group shadow-2xl hover:bg-white/[0.04] transition-all">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-12">
