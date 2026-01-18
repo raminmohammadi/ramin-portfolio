@@ -418,7 +418,7 @@ const TeachingView = () => {
           <div className="flex items-center gap-6 mb-10">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Coursera-Logo_600x600.svg" alt="Coursera" className="w-16 h-16 shadow-2xl" />
             <a href="https://www.coursera.org/instructor/~162569871" target="_blank" rel="noreferrer" className="group/link flex items-center gap-4">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-blue-400 uppercase italic hover:text-blue-300 transition-colors tracking-tighter">Teaching | Coursera</h3>
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-blue-400 uppercase italic hover:text-blue-300 transition-colors tracking-tighter">Faculty | Coursera</h3>
               <ExternalLink size={24} className="text-blue-500" />
             </a>
           </div>
