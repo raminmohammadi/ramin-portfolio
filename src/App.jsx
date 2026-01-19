@@ -278,7 +278,7 @@ const ExecView = () => {
   const experience = [
     { 
       role: "Lead Principal AI Engineer | iBase-t", 
-      time: "June 2025 — Present | California", 
+      time: "2025 — Present | California", 
       desc: "Directing high-performing AI organization. Secured major enterprise customers via Solumina-AI.",
       gradient: "from-emerald-500 via-emerald-400 to-blue-500",
       icon: <Target className="size-24 md:size-40" />,
@@ -401,7 +401,7 @@ const TeachingView = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {["MLOps", "Generative AI", "NLP Foundations", "Statistical Learning"].map((course, i) => (
+          {["MLOps", "Deep Generative Modeling", "NLP", "Statistical Learning", "Visualisation Techniques"].map((course, i) => (
             <div key={i} className="p-8 md:p-10 bg-white/5 rounded-3xl border border-white/5 text-center group hover:bg-emerald-500/10 transition-all shadow-xl">
               <p className="text-white font-bold italic text-base md:text-lg lg:text-xl uppercase group-hover:text-emerald-400 tracking-tight leading-none">{course}</p>
             </div>
