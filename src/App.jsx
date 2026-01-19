@@ -401,7 +401,7 @@ const TeachingView = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {["MLOps", "Deep Generative Modeling", "NLP", "Statistical Learning", "Visualisation Techniques"].map((course, i) => (
+          {["MLOps", "Deep Generative Modeling", "NLP", "Statistical Learning", "Visualization Techniques"].map((course, i) => (
             <div key={i} className="p-8 md:p-10 bg-white/5 rounded-3xl border border-white/5 text-center group hover:bg-emerald-500/10 transition-all shadow-xl">
               <p className="text-white font-bold italic text-base md:text-lg lg:text-xl uppercase group-hover:text-emerald-400 tracking-tight leading-none">{course}</p>
             </div>
