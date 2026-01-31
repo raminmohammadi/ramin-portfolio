@@ -190,7 +190,7 @@ const HomeView = ({ setTab }) => (
               
               <div className="text-lg md:text-xl text-slate-400 font-light leading-relaxed pl-1 md:pl-10 space-y-8">
                 <p>
-                  Most people can build a model; very few can ship one that survives a production environment with regulated data and enterprise scale. I went back for my MBA because I realized that the hardest problems in AI aren't just technical—they’re organizational and strategic.
+                  Most people can build a model; very few can ship one that survives a production environment with regulated data and enterprise scale. I went back for my MBA because I realized that the hardest problems in AI aren't just technical-they’re organizational and strategic.
                 </p>
                 
                 <p className="text-white font-medium italic leading-relaxed">
