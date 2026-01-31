@@ -18,7 +18,7 @@ import expoCrowd2 from './assets/1745263483597.jpeg';
 import northeasternLogo from './assets/northeastern_logo.png'; 
 import practicalAI340 from './assets/practical_ai_340.png';
 import practicalAI273 from './assets/practical_ai_273.png';
-import profilePic from './assets/Ramin-Mohammadi.png';
+import profilePic from './assets/Ramin-Mohammadi1.jpg';
 import intelIgnite1 from './assets/ignite.jpeg';
 import intelIgnite2 from './assets/ignite2.jpeg'
 // New Assets for Teaching & Studio
