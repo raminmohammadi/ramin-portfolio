@@ -507,7 +507,7 @@ const AgentLearningView = () => (
       </div>
     </div>
 
-    {/* PROJECT MILO: Reachy MINI Companion */}
+    {/* PROJECT MILO: Personal Companion */}
     <div className="mb-40">
       <div className="flex items-center gap-6 mb-12">
         <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] leading-none">Embodied AI: In Development</h2>
@@ -522,7 +522,7 @@ const AgentLearningView = () => (
               <h3 className="text-4xl md:text-6xl font-black text-white italic tracking-tighter uppercase leading-none">Project Milo</h3>
             </div>
             <p className="text-xl md:text-2xl text-slate-300 font-extralight italic leading-snug">
-              Developing a <strong>self-learning personal companion</strong> using the Reachy MINI platform. This research applies latent world models to physical embodiment, focusing on human-interaction cues and autonomous representation learning in domestic spaces.
+              Developing a <strong>self-learning personal companion</strong>. This research applies latent world models to physical embodiment, focusing on human-interaction cues and autonomous representation learning in domestic spaces.
             </p>
             <div className="flex flex-wrap gap-4">
               {["Pollen Robotics", "Personal Companion", "Embodied AI", "SSL Interaction"].map((tag, idx) => (
