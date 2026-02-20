@@ -474,10 +474,10 @@ const AgentLearningView = () => (
     <div className="text-center md:text-left mb-32 border-b border-white/5 pb-20">
       <h2 className="text-xs md:text-sm font-black text-emerald-500 uppercase tracking-[0.6em] mb-6">Autonomous Intelligence</h2>
       <h1 className="text-6xl md:text-[8rem] font-black text-white tracking-tighter uppercase italic leading-[0.85] mb-12">
-        Agent <br /> Learning.
+        Agent <br /> Autonomy.
       </h1>
-      <p className="text-2xl md:text-3xl text-slate-400 max-w-3xl font-light italic leading-relaxed">
-        Pioneering high-integrity self-learning systems through Reinforcement Learning and World Models—moving from reactive policies to proactive, predictive intelligence.
+      <p className="text-2xl md:text-3xl text-slate-400 max-w-4xl font-light italic leading-relaxed">
+        Engineering the next generation of self-supervised learning agents—systems that build internal representations of reality to achieve true operational autonomy.
       </p>
     </div>
 
@@ -487,14 +487,14 @@ const AgentLearningView = () => (
         <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] mb-8">Research Philosophy</h2>
         <div className="space-y-10">
           <p className="text-2xl md:text-4xl text-slate-300 font-light italic leading-tight border-l-4 border-emerald-500 pl-10">
-            "True autonomy isn't found in memorizing pixels, but in mastering the latent physics of the environment."
+            "Autonomy isn't granted by labels; it's earned through self-supervised discovery of the world's dynamics."
           </p>
           <div className="text-lg md:text-xl text-slate-400 font-light leading-relaxed pl-1 md:pl-10 space-y-8">
             <p>
-              My research explores the intersection of <strong>Self-Supervised Learning</strong> and <strong>Reinforcement Learning (RL)</strong>. I am focused on building agents that don't just react to current observations, but internalize a world model to predict future states and rewards.
+              My work centers on the pursuit of <strong>Agent Autonomy</strong> through <strong>Self-Supervised Learning (SSL)</strong>. The goal is to move beyond supervised constraints and build agents capable of extracting their own training signals from high-dimensional, unlabeled environments.
             </p>
             <p className="text-white font-medium italic leading-relaxed">
-              By leveraging architectural patterns like Variational Autoencoders for perception and MDN-RNNs for temporal memory, my work aims to create robust agents capable of "hallucinating" experience to accelerate learning in complex, high-dimensional spaces.
+              This involves designing architectures that learn to predict the future and model their own uncertainty. Whether it’s programming complex robotics like the <strong>Reachy Mini</strong> or building <strong>Small Language Models</strong> from scratch, the objective remains the same: creating high-integrity systems that can perceive, learn, and act with minimal human intervention.
             </p>
           </div>
         </div>
@@ -505,24 +505,24 @@ const AgentLearningView = () => (
       </div>
     </div>
 
-    {/* Highlighted Project: World Models */}
+    {/* Highlighted Implementation: World Models */}
     <div className="mb-20">
-      <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] mb-12 text-center md:text-left">Selected Implementation</h2>
+      <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] mb-12 text-center md:text-left">Core Implementation: World Models</h2>
       <div className="relative p-[1px] rounded-[60px] overflow-hidden group shadow-2xl bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500">
         <div className="relative p-12 md:p-16 bg-[#020617] rounded-[59px]">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="w-full lg:w-1/2">
               <div className="flex items-center gap-4 mb-8">
                 <Github size={32} className="text-emerald-500" />
-                <span className="text-slate-500 font-black text-xs uppercase tracking-[0.5em]">Research Repository</span>
+                <span className="text-slate-500 font-black text-xs uppercase tracking-[0.5em]">Research Milestone</span>
               </div>
               <h3 className="text-4xl md:text-6xl font-black italic tracking-tighter uppercase mb-8 text-white leading-none">World_Models</h3>
               <p className="text-xl md:text-2xl text-slate-300 font-extralight italic mb-10 leading-snug">
-                A modular PyTorch re-implementation of the Ha & Schmidhuber (2018) architecture. This project ground-truths the theory of latent "dream" training, achieving consistent scores of 900+ on the CarRacing-v3 track.
+                An empirical re-implementation of the Ha & Schmidhuber (2018) architecture. This project demonstrates how an agent can leverage a self-supervised VAE and MDN-RNN to "dream" of future transitions, ultimately mastering complex navigation tasks through internal simulation.
               </p>
               
               <div className="flex flex-wrap gap-4 mb-10">
-                {["VAE Perception", "MDN-RNN Memory", "CMA-ES Policy"].map((tag, idx) => (
+                {["SSL Representation", "Predictive Dynamics", "Evolutionary Policy"].map((tag, idx) => (
                   <div key={idx} className="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase text-slate-400">
                     {tag}
                   </div>
@@ -543,14 +543,14 @@ const AgentLearningView = () => (
               <iframe 
                 className="w-full h-full opacity-80 group-hover/vid:opacity-100 transition-opacity"
                 src="https://www.youtube.com/embed/n8xeodYAXnE?autoplay=1&mute=1&loop=1&playlist=n8xeodYAXnE" 
-                title="World Model Agent Learning" 
+                title="Self-Supervised Agent Performance" 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen
               ></iframe>
               <div className="absolute top-6 left-6 pointer-events-none">
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400 bg-black/60 px-4 py-2 rounded-full backdrop-blur-sm border border-emerald-500/20">
-                  Agent Hallucination Evaluation
+                  Autonomous Agent Evaluation
                 </span>
               </div>
             </div>
@@ -562,9 +562,21 @@ const AgentLearningView = () => (
     {/* Expertise Grid */}
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-32">
       {[
-        { title: "Self-Learning", desc: "Developing agents that bootstrap knowledge through intrinsic curiosity and self-supervised objectives.", icon: <Zap className="text-emerald-500" /> },
-        { title: "World Models", desc: "Architecting generative transition models to simulate environment physics in latent spaces.", icon: <Globe className="text-blue-500" /> },
-        { title: "Reinforcement Learning", desc: "Implementing advanced RL algorithms from evolutionary strategies to gradient-based policy optimization.", icon: <Target className="text-red-500" /> }
+        { 
+          title: "Self-Supervised Learning", 
+          desc: "Developing representation-learning objectives that allow agents to bootstrap knowledge from raw sensor data without human labels.", 
+          icon: <Zap className="text-emerald-500" /> 
+        },
+        { 
+          title: "Latent World Models", 
+          desc: "Architecting generative transition models to simulate environment physics and forecast multi-modal futures in latent spaces.", 
+          icon: <Globe className="text-blue-500" /> 
+        },
+        { 
+          title: "Intrinsically Motivated RL", 
+          desc: "Implementing reinforcement learning algorithms driven by curiosity and empowerment to explore and master complex domains autonomously.", 
+          icon: <Target className="text-red-500" /> 
+        }
       ].map((item, i) => (
         <div key={i} className="p-10 bg-white/[0.02] border border-white/5 rounded-[40px] hover:border-emerald-500/30 transition-all shadow-xl">
           <div className="mb-6">{item.icon}</div>
