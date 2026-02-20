@@ -44,6 +44,7 @@ const App = () => {
     { id: 'home', label: 'Overview' },
     { id: 'exec', label: 'Executive Leadership' },
     { id: 'teaching', label: 'Teaching & Academy' },
+    { id: 'agent-learning', label: 'Agent Learning' },
     { id: 'research', label: 'Research & Patents' },
     { id: 'expo', label: 'MLOps Expo' },
     { id: 'projects', label: 'Hobby Projects' },
@@ -96,6 +97,7 @@ const App = () => {
         {activeTab === 'home' && <HomeView setTab={setActiveTab} />}
         {activeTab === 'exec' && <ExecView />}
         {activeTab === 'teaching' && <TeachingView />}
+        {activeTab === 'agent-learning' && <AgentLearningView />}
         {activeTab === 'research' && <ResearchView />}
         {activeTab === 'expo' && <ExpoView />}
         {activeTab === 'projects' && <ProjectsView />}
@@ -465,7 +467,76 @@ const TeachingView = () => {
   );
 };
 
-/* --- SUB-VIEW: RESEARCH --- */
+/* --- VIEW: AGENT LEARNING (NEW) --- */
+const AgentLearningView = () => (
+  <div className="pt-60 pb-40 px-8 animate-in slide-in-from-bottom duration-1000 max-w-7xl mx-auto">
+    <div className="text-center md:text-left mb-32 border-b border-white/5 pb-20">
+      <h2 className="text-xs md:text-sm font-black text-emerald-500 uppercase tracking-[0.6em] mb-6">Internal World Models</h2>
+      <h1 className="text-6xl md:text-[8rem] font-black text-white tracking-tighter uppercase italic leading-[0.85] mb-12">
+        Agent <br /> Learning.
+      </h1>
+      <p className="text-2xl md:text-3xl text-slate-400 max-w-3xl font-light italic leading-relaxed">
+        Building high-integrity self-learning systems that "dream" before they act—leveraging neural hallucinations to master high-dimensional environments.
+      </p>
+    </div>
+
+    <div className="grid lg:grid-cols-12 gap-16 items-center mb-32">
+      <div className="lg:col-span-8 text-center md:text-left">
+        <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] mb-8">The Philosophy</h2>
+        <div className="space-y-10">
+          <p className="text-2xl md:text-4xl text-slate-300 font-light italic leading-tight border-l-4 border-emerald-500 pl-10">
+            "Reactive policies handle pixels; intelligent agents handle a hallucination of the future."
+          </p>
+          <div className="text-lg md:text-xl text-slate-400 font-light leading-relaxed pl-1 md:pl-10 space-y-8">
+            <p>
+              My research focuses on the transition from traditional trial-and-error Reinforcement Learning to <strong>World Models</strong>. By decoupling perception from memory and action, we can train agents in a latent dream state—processing millions of experience frames without physical interaction.
+            </p>
+            <p className="text-white font-medium italic leading-relaxed">
+              This paradigm involves Variational Autoencoders for perception, MDN-RNNs for temporal forecasting, and Evolutionary Strategies for policy optimization. This allows for robust self-learning systems that survive production-grade noise and hardware constraints.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="lg:col-span-4 relative group hidden lg:block">
+        <div className="absolute inset-0 bg-emerald-500/20 blur-3xl rounded-full opacity-50" />
+        <BrainCircuit className="relative text-emerald-500 mx-auto" size={180} />
+      </div>
+    </div>
+
+    {/* Featured Repository Section */}
+    <div className="relative p-[1px] rounded-[60px] overflow-hidden group shadow-2xl bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500 mb-32">
+      <div className="relative p-12 md:p-16 bg-[#020617] rounded-[59px]">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+          <div className="w-full lg:w-1/2">
+            <div className="flex items-center gap-4 mb-8">
+              <Github size={32} className="text-emerald-500" />
+              <span className="text-slate-500 font-black text-xs uppercase tracking-[0.5em]">Primary Research Repo</span>
+            </div>
+            <h3 className="text-4xl md:text-6xl font-black italic tracking-tighter uppercase mb-8 text-white">World_Models</h3>
+            <p className="text-xl md:text-2xl text-slate-300 font-extralight italic mb-10 leading-snug">
+              Modular PyTorch implementation of Ha & Schmidhuber (2018). Includes a VAE perception engine, MDN-RNN for predictive forecasting, and CMA-ES for controller evolution.
+            </p>
+            <a href="https://github.com/raminmohammadi/World_Models" target="_blank" rel="noreferrer" className="px-12 py-6 bg-white text-[#020617] font-black uppercase tracking-widest text-xs hover:bg-emerald-400 transition-all inline-flex items-center gap-4">
+              Explore Repository <ExternalLink size={20} />
+            </a>
+          </div>
+          <div className="w-full lg:w-1/2 aspect-video rounded-[40px] overflow-hidden border border-white/10 bg-black shadow-2xl relative">
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/n8xeodYAXnE?autoplay=1&mute=1&loop=1&playlist=n8xeodYAXnE" 
+              title="Agent Learning Performance" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+/* --- VIEW: RESEARCH --- */
 const ResearchView = () => (
   <div className="pt-60 pb-40 px-8 animate-in slide-in-from-bottom duration-1000 max-w-7xl mx-auto">
     <div className="mb-32 border-b border-white/5 pb-20">
