@@ -18,7 +18,7 @@ import expoCrowd2 from './assets/1745263483597.jpeg';
 import northeasternLogo from './assets/northeastern_logo.png'; 
 import practicalAI340 from './assets/practical_ai_340.png';
 import practicalAI273 from './assets/practical_ai_273.png';
-import profilePic from './assets/Ramin-Mohammadi1.jpg';
+import profilePic from './assets/Ramin-Madi1.jpg';
 import intelIgnite1 from './assets/ignite.jpeg';
 import intelIgnite2 from './assets/ignite2.jpeg'
 // New Assets for Teaching & Studio
@@ -61,7 +61,7 @@ const App = () => {
           <div className="flex items-center gap-4 cursor-pointer" onClick={() => setActiveTab('home')}>
             <div className="w-10 h-10 bg-white text-[#020617] flex items-center justify-center font-black text-xl italic uppercase">RM</div>
             <div className="flex flex-col">
-              <span className="text-xl font-black tracking-tight text-white uppercase italic leading-none">Ramin Mohammadi</span>
+              <span className="text-xl font-black tracking-tight text-white uppercase italic leading-none">Ramin Madi</span>
               <span className="text-[10px] md:text-xs text-emerald-500 font-bold uppercase tracking-[0.3em] mt-1">Ph.D. | AI Strategy</span>
             </div>
           </div>
@@ -107,10 +107,10 @@ const App = () => {
 
       <footer className="py-20 px-8 border-t border-white/5 bg-black">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-white font-black tracking-widest uppercase italic text-2xl">Ramin Mohammadi, Ph.D.</p>
+          <p className="text-white font-black tracking-widest uppercase italic text-2xl">Ramin Madi, Ph.D.</p>
           <div className="flex gap-4">
-            <a href="https://linkedin.com/in/ramin-mohammadi-ml/" target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-xl border border-white/10 hover:text-emerald-400 transition-all shadow-xl"><Linkedin size={20} /></a>
-            <a href="https://github.com/raminmohammadi" target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-xl border border-white/10 hover:text-emerald-400 transition-all shadow-xl"><Github size={20} /></a>
+            <a href="https://linkedin.com/in/ramin-Madi-ml/" target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-xl border border-white/10 hover:text-emerald-400 transition-all shadow-xl"><Linkedin size={20} /></a>
+            <a href="https://github.com/raminMadi" target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-xl border border-white/10 hover:text-emerald-400 transition-all shadow-xl"><Github size={20} /></a>
             <a href="https://www.youtube.com/@MLWithRamin" target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-xl border border-white/10 hover:text-emerald-400 transition-all shadow-xl"><Youtube size={20} /></a>
           </div>
         </div>
@@ -177,7 +177,7 @@ const HomeView = ({ setTab }) => (
             <div className="relative rounded-[40px] overflow-hidden border border-white/10 shadow-2xl aspect-[4/5] lg:aspect-auto">
               <img 
                 src={profilePic} 
-                alt="Ramin Mohammadi" 
+                alt="Ramin Madi" 
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-60" />
@@ -580,7 +580,7 @@ const AgentLearningView = () => (
                 An empirical re-implementation of Ha & Schmidhuber (2018). This project demonstrates how an agent leverages a self-supervised VAE and MDN-RNN to master high-dimensional environments through internal simulation.
               </p>
               <a 
-                href="https://github.com/raminmohammadi/World_Models" 
+                href="https://github.com/raminMadi/World_Models" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="px-12 py-6 bg-white text-[#020617] font-black uppercase tracking-widest text-xs hover:bg-emerald-400 transition-all inline-flex items-center gap-4"
@@ -702,7 +702,7 @@ const ExpoView = () => {
           {/* Founder Line */}
           <div className="flex items-center gap-4 mb-8">
             <span className="h-[2px] w-12 md:w-16 bg-emerald-500"></span>
-            <span className="text-emerald-400 text-base md:text-lg font-black uppercase tracking-[0.5em] leading-none italic">Founder: Ramin Mohammadi, Ph.D.</span>
+            <span className="text-emerald-400 text-base md:text-lg font-black uppercase tracking-[0.5em] leading-none italic">Founder: Ramin Madi, Ph.D.</span>
           </div>
           <h1 className="text-7xl md:text-8xl lg:text-[9.5rem] font-black text-white tracking-tighter uppercase italic mb-10 leading-[0.85]">The MLOps <br/> Expo.</h1>
           
@@ -775,13 +775,13 @@ const ProjectsView = () => {
   const [loading, setLoading] = useState(false);
 
   const repos = [
-    { name: 'AI-agent-smart-assist', path: 'raminmohammadi/ai-agent-smart-assist', desc: 'Agentic AI' },
-    { name: 'Averix', path: 'raminmohammadi/Averix', desc: 'Code Generation' },
-    { name: 'GradientBlueprint', path: 'raminmohammadi/GradientBlueprint', desc: 'Architectural Patterns' },
-    { name: 'US Food', path: 'raminmohammadi/US_Food', desc: 'Data Analytics' },
-    { name: 'MLOps', path: 'raminmohammadi/MLOps', desc: 'Production Systems' },
-    { name: 'GEN-AI', path: 'raminmohammadi/GEN-AI', desc: 'Generative Frameworks' },
-    { name: 'NLP', path: 'raminmohammadi/NLP', desc: 'Language Processing' },
+    { name: 'AI-agent-smart-assist', path: 'raminMadi/ai-agent-smart-assist', desc: 'Agentic AI' },
+    { name: 'Averix', path: 'raminMadi/Averix', desc: 'Code Generation' },
+    { name: 'GradientBlueprint', path: 'raminMadi/GradientBlueprint', desc: 'Architectural Patterns' },
+    { name: 'US Food', path: 'raminMadi/US_Food', desc: 'Data Analytics' },
+    { name: 'MLOps', path: 'raminMadi/MLOps', desc: 'Production Systems' },
+    { name: 'GEN-AI', path: 'raminMadi/GEN-AI', desc: 'Generative Frameworks' },
+    { name: 'NLP', path: 'raminMadi/NLP', desc: 'Language Processing' },
   ];
 
   const fetchReadme = async (repoPath) => {
