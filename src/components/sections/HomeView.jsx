@@ -1,12 +1,14 @@
 import React from 'react';
 import { Zap, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom'; // 1. Added Link import
 import { StatBox } from '../ui/StatBox';
 import { HOME_STATS, BIO_DATA } from '../../constants/experienceData';
 
 // Assets
 import profilePic from '../../assets/Ramin-Mohammadi1.jpg';
 
-const HomeView = ({ setTab }) => (
+// 2. Removed { setTab } from the props here
+const HomeView = () => (
   <div className="animate-in fade-in duration-1000">
     <header className="relative pt-72 pb-40 px-8 overflow-hidden">
       {/* Background Glow */}
@@ -35,12 +37,19 @@ const HomeView = ({ setTab }) => (
         </div>
 
         <div className="flex flex-wrap gap-8 justify-center md:justify-start">
-          <button onClick={() => setTab('exec')} className="px-12 py-6 bg-white text-[#020617] font-black uppercase tracking-widest text-xs md:text-sm hover:bg-emerald-400 transition-all flex items-center gap-4 shadow-2xl">
+          {/* 3. Replaced buttons with Links */}
+          <Link 
+            to="/exec" 
+            className="px-12 py-6 bg-white text-[#020617] font-black uppercase tracking-widest text-xs md:text-sm hover:bg-emerald-400 transition-all flex items-center gap-4 shadow-2xl"
+          >
             Executive Summary <ArrowRight size={20} />
-          </button>
-          <button onClick={() => setTab('teaching')} className="px-12 py-6 bg-white/5 text-white border border-white/10 font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-white/10 transition-all italic shadow-xl">
+          </Link>
+          <Link 
+            to="/teaching" 
+            className="px-12 py-6 bg-white/5 text-white border border-white/10 font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-white/10 transition-all italic shadow-xl"
+          >
             Academic Impact
-          </button>
+          </Link>
         </div>
       </div>
     </header>
