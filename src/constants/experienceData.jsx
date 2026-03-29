@@ -73,7 +73,7 @@ export const MILO_PROJECT = {
 };
 
 export const WORLD_MODELS_DATA = {
-  title: "World_Models",
+  title: "World Models",
   subtitle: "Open Source Research",
   desc: "An empirical re-implementation of Ha & Schmidhuber (2018). This project demonstrates how an agent leverages a self-supervised VAE and MDN-RNN to master high-dimensional environments through internal simulation.",
   repoUrl: "https://github.com/RaminMohammadi/World_Models",
