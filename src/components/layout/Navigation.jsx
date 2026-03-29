@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useLocation, useNavigate, Link } from 'react-router-dom'; // Added Link and hooks
 import { NAV_OPTIONS } from '../../constants/navigation';
 
-const Navigation = ({ activeTab, setActiveTab }) => {
+const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  
+  const location = useLocation(); // Get current URL
+  const navigate = useNavigate(); // For programmatic navigation
+
+  // Derive activeTab from the URL path (e.g., "/exec" becomes "exec")
+  // If the path is "/", we default to "home"
+  const currentPath = location.pathname.split('/')[1] || 'home';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -12,18 +20,28 @@ const Navigation = ({ activeTab, setActiveTab }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const currentLabel = NAV_OPTIONS.find(opt => opt.id === activeTab)?.label;
+  const currentLabel = NAV_OPTIONS.find(opt => opt.id === currentPath)?.label || 'Home';
+
+  const handleNavClick = (id) => {
+    // Navigate to /id, or / if id is home
+    const path = id === 'home' ? '/' : `/${id}`;
+    navigate(path);
+    setDropdownOpen(false);
+    window.scrollTo(0, 0);
+  };
 
   return (
     <nav className={`fixed w-full z-[100] transition-all duration-500 ${scrolled ? 'bg-[#020617]/95 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-8'}`}>
       <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
-        <div className="flex items-center gap-4 cursor-pointer" onClick={() => setActiveTab('home')}>
+        
+        {/* Logo - now wraps in a Link for better SEO/UX */}
+        <Link to="/" className="flex items-center gap-4 cursor-pointer" onClick={() => window.scrollTo(0,0)}>
           <div className="w-10 h-10 bg-white text-[#020617] flex items-center justify-center font-black text-xl italic uppercase">RM</div>
           <div className="flex flex-col">
             <span className="text-xl font-black tracking-tight text-white uppercase italic leading-none">Ramin Mohammadi</span>
             <span className="text-[10px] md:text-xs text-emerald-500 font-bold uppercase tracking-[0.3em] mt-1">Ph.D. | AI Strategy</span>
           </div>
-        </div>
+        </Link>
         
         <div className="relative">
           <button 
@@ -41,8 +59,8 @@ const Navigation = ({ activeTab, setActiveTab }) => {
                 {NAV_OPTIONS.map((opt) => (
                   <button
                     key={opt.id}
-                    onClick={() => { setActiveTab(opt.id); setDropdownOpen(false); window.scrollTo(0,0); }}
-                    className={`w-full text-left px-8 py-4 text-[11px] md:text-xs font-bold uppercase tracking-widest border-b border-white/5 last:border-0 ${activeTab === opt.id ? 'bg-emerald-500/10 text-emerald-400' : 'text-slate-400 hover:bg-white/5 hover:text-white'}`}
+                    onClick={() => handleNavClick(opt.id)}
+                    className={`w-full text-left px-8 py-4 text-[11px] md:text-xs font-bold uppercase tracking-widest border-b border-white/5 last:border-0 ${currentPath === opt.id ? 'bg-emerald-500/10 text-emerald-400' : 'text-slate-400 hover:bg-white/5 hover:text-white'}`}
                   >
                     {opt.label}
                   </button>

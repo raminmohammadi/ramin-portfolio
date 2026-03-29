@@ -32,7 +32,7 @@ const ExpoView = () => {
         <div>
           <div className="flex items-center gap-4 mb-8">
             <span className="h-[2px] w-16 bg-emerald-500"></span>
-            <span className="text-emerald-400 text-lg font-black uppercase tracking-[0.5em] italic">Founder: Ramin Mohammadi, Ph.D.</span>
+            <span className="text-emerald-400 text-lg font-black uppercase tracking-[0.5em] italic">Founder: Ramin Mohammadi</span>
           </div>
           <h1 className="text-7xl md:text-9xl font-black text-white tracking-tighter uppercase italic mb-10 leading-none">The MLOps <br/> Expo.</h1>
           <p className="text-2xl text-slate-400 font-extralight italic mb-12 max-w-2xl border-l-4 border-emerald-500/30 pl-10">
