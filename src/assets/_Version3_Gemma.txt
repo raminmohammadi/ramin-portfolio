@@ -1,0 +1,19 @@
+<!doctype html>
+  <html>
+    <head>
+      <title>iBase▸t MES</title>
+      <link rel="icon" type="image/png" href="/assets/favicons/favicon.png">
+      <link href="/assets/css/grommet-ibaset.min.css" rel="stylesheet" type="text/css" id="grommet-theme-css">
+      <link rel="stylesheet" href="/login-styles.css"/>
+      <script>
+        
+        window.serviceName="login";
+        window.clientIdParam="SOLUMINA-ADMIN-API";
+        
+    </script>
+    </head>
+    <body>
+      <div id="container"></div>
+      <script type="text/javascript" src="/bundle.js"></script>
+    </body>
+  </html>

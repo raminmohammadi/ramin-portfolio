@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Calendar, MapPin, ArrowUpRight } from 'lucide-react'; // Added icons for the new banner
+
+// Assets
 import expoMain from '../../assets/1766011722581.jpeg';
 import expoJudging from '../../assets/1766011720233.jpeg';
 import expoPartner from '../../assets/1766011714075.jpeg';
@@ -15,7 +18,7 @@ const ExpoView = () => {
   const expoGallery = [
     { src: expoMain, label: 'Season 05 | Google Cambridge', span: 'md:col-span-8 md:row-span-2' },
     { src: expoJudging, label: 'Industry Judging', span: 'md:col-span-4 md:row-span-1' },
-    { src: expoPartner, label: 'Google Cloud Partnership', span: 'md:col-span-4 md:row-span-1' },
+    { src: expoPartner, label: 'Google Partnership', span: 'md:col-span-4 md:row-span-1' },
     { 
       isSwitchable: true,
       variants: [
@@ -28,11 +31,13 @@ const ExpoView = () => {
 
   return (
     <div className="pt-48 pb-32 px-8 max-w-7xl mx-auto animate-in slide-in-from-bottom duration-700">
-      <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+      
+      {/* 1. Hero & Stats Section */}
+      <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
         <div>
           <div className="flex items-center gap-4 mb-8">
             <span className="h-[2px] w-16 bg-emerald-500"></span>
-            <span className="text-emerald-400 text-lg font-black uppercase tracking-[0.5em] italic">Founder: Ramin Mohammadi, Ph.D.</span>
+            <span className="text-emerald-400 text-lg font-black uppercase tracking-[0.5em] italic">Founder: Ramin Mohammadi</span>
           </div>
           <h1 className="text-7xl md:text-9xl font-black text-white tracking-tighter uppercase italic mb-10 leading-none">The MLOps <br/> Expo.</h1>
           <p className="text-2xl text-slate-400 font-extralight italic mb-12 max-w-2xl border-l-4 border-emerald-500/30 pl-10">
@@ -58,6 +63,53 @@ const ExpoView = () => {
         </div>
       </div>
 
+      {/* 2. NEW: Upcoming Event Banner (Season 06) */}
+      <div className="mb-24 relative overflow-hidden rounded-[60px] bg-gradient-to-br from-emerald-900/30 to-[#020617] border border-emerald-500/30 p-10 md:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 shadow-[0_0_50px_-15px_rgba(16,185,129,0.2)]">
+        {/* Glow effect */}
+        <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3" />
+        
+        <div className="relative z-10 flex-1">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-400/50 text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-widest mb-6 bg-emerald-950/50">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Upcoming Chapter
+          </div>
+          
+          <h2 className="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter mb-6 leading-none">
+            Season 06
+          </h2>
+          
+          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 text-slate-300 font-light text-lg md:text-xl italic">
+            <span className="flex items-center gap-3">
+              <Calendar size={22} className="text-emerald-400" /> 
+              April 15th, 2026
+            </span>
+            <span className="hidden md:block text-emerald-500/30">|</span>
+            <span className="flex items-center gap-3">
+              <MapPin size={22} className="text-emerald-400" /> 
+              Google Cambridge
+            </span>
+          </div>
+        </div>
+
+        <div className="relative z-10 w-full lg:w-auto">
+          <a 
+            href="https://luma.com/6bhwupwg" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group flex items-center justify-center gap-4 px-12 py-6 bg-emerald-500 text-[#020617] font-black uppercase tracking-widest text-xs md:text-sm hover:bg-emerald-400 transition-all rounded-full w-full lg:w-auto shadow-[0_0_30px_-5px_rgba(16,185,129,0.4)]"
+          >
+            RSVP on Luma
+            <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </a>
+        </div>
+      </div>
+
+      {/* 3. Past Events Gallery */}
+      <div className="mb-10 flex items-center gap-4">
+        <span className="text-slate-500 text-sm font-black uppercase tracking-[0.4em]">Previous Chapters Archive</span>
+        <div className="h-[1px] flex-1 bg-white/5"></div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
         {expoGallery.map((img, i) => {
           const displaySrc = img.isSwitchable ? img.variants[crowdIndex].src : img.src;
@@ -78,6 +130,7 @@ const ExpoView = () => {
           );
         })}
       </div>
+      
     </div>
   );
 };

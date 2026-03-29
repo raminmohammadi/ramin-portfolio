@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // Layout & Sections
+import ScrollToTop from './components/ScrollToTop';
 import Navigation from './components/layout/Navigation';
 import Footer from './components/layout/Footer';
 import HomeView from './components/sections/HomeView';
@@ -14,32 +16,37 @@ import ExpoView from './components/sections/ExpoView';
 import ProjectsView from './components/sections/ProjectsView';
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState('home');
-
-  const renderView = () => {
-    switch (activeTab) {
-      case 'exec': return <ExecView />;
-      case 'teaching': return <TeachingView />;
-      case 'agent-learning': return <AgentLearningView />;
-      case 'research': return <ResearchView />;
-      case 'expo': return <ExpoView />;
-      case 'projects': return <ProjectsView />;
-      default: return <HomeView setTab={setActiveTab} />;
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-[#020617] text-slate-300 font-sans selection:bg-emerald-500/30 overflow-x-hidden">
-      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
-      
-      <main className="min-h-screen">
-        {renderView()}
-      </main>
+    <Router>
+      {/* Logic to reset scroll on every route change */}
+      <ScrollToTop />
 
-      <Footer />
-      <SpeedInsights />
-      <Analytics />
-    </div>
+      <div className="min-h-screen bg-[#020617] text-slate-300 font-sans selection:bg-emerald-500/30 overflow-x-hidden">
+        
+        {/* Navigation is outside Routes so it is visible on every page */}
+        <Navigation />
+        
+        <main className="min-h-screen">
+          <Routes>
+            {/* Define your page paths here */}
+            <Route path="/" element={<HomeView />} />
+            <Route path="/exec" element={<ExecView />} />
+            <Route path="/teaching" element={<TeachingView />} />
+            <Route path="/agent-learning" element={<AgentLearningView />} />
+            <Route path="/research" element={<ResearchView />} />
+            <Route path="/expo" element={<ExpoView />} />
+            <Route path="/projects" element={<ProjectsView />} />
+            
+            {/* Catch-all: If user goes to a URL that doesn't exist, send them Home */}
+            <Route path="*" element={<HomeView />} />
+          </Routes>
+        </main>
+
+        <Footer />
+        <SpeedInsights />
+        <Analytics />
+      </div>
+    </Router>
   );
 };
 
