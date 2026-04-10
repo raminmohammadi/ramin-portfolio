@@ -63,7 +63,7 @@ const ExpoView = () => {
                 />
                 {/* Subtle Tooltip on Hover */}
                 <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-black text-[8px] font-black px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">
-                  Season 05 Badge
+                  Season 06 Badge
                 </span>
             </div>
 
