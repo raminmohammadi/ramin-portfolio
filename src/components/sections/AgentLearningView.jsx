@@ -10,6 +10,7 @@ import { MILO_PROJECT, WORLD_MODELS_DATA } from '../../constants/experienceData'
 import milo1 from '../../assets/milo1.jpeg';
 import milo2 from '../../assets/milo2.jpeg';
 import milo3 from '../../assets/milo_interaction.jpeg'; // The photo with your parents
+import milo4 from '../../assets/milo3.jpeg';
 
 const AgentLearningView = () => (
   <div className="pt-60 pb-40 px-8 animate-in slide-in-from-bottom duration-1000 max-w-7xl mx-auto">
@@ -79,6 +80,7 @@ const AgentLearningView = () => (
               { img: milo1, label: "Hardware Assembly" },
               { img: milo2, label: "Dual-Brain Pipeline" },
               { img: milo3, label: "Human-Centric Design" }, // The one with your parents
+              { img: milo4, label: "Final Look" }    // Or another build photo
             ].map((item, i) => (
               <div key={i} className="rounded-[30px] md:rounded-[40px] overflow-hidden border border-white/10 aspect-square shadow-xl relative group/img">
                 <img 
