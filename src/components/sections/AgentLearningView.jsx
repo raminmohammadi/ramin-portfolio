@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Github, ExternalLink } from 'lucide-react';
+import { Cpu, Github, ExternalLink, BookOpen } from 'lucide-react'; // Added BookOpen
 
 // UI Primitives
 import { SectionHeader } from '../ui/SectionHeader';
@@ -21,14 +21,14 @@ const AgentLearningView = () => (
       color="emerald"
     />
 
-    {/* 2. Project Milo: Embodied AI (using GlassCard) */}
+    {/* 2. Project Milo: Embodied AI */}
     <div className="mb-40">
       <div className="flex items-center gap-6 mb-12">
         <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] leading-none">
           {MILO_PROJECT.subtitle}
         </h2>
         <span className="px-4 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[10px] font-black text-emerald-400 uppercase tracking-widest animate-pulse">
-          Live Build Log
+          MVP Released
         </span>
       </div>
       
@@ -51,6 +51,26 @@ const AgentLearningView = () => (
                 </div>
               ))}
             </div>
+
+            {/* Added CTA Buttons for the Article and Repo */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <a 
+                href={MILO_PROJECT.articleUrl} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="px-8 py-4 bg-emerald-500 text-black font-black uppercase tracking-widest text-[10px] hover:bg-emerald-400 transition-all inline-flex items-center gap-3 shadow-xl"
+              >
+                Read the Story <BookOpen size={16} />
+              </a>
+              <a 
+                href={MILO_PROJECT.repoUrl} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="px-8 py-4 bg-white/5 border border-white/10 text-white font-black uppercase tracking-widest text-[10px] hover:bg-white/10 transition-all inline-flex items-center gap-3"
+              >
+                Source Code <Github size={16} />
+              </a>
+            </div>
           </div>
 
           <div className="lg:col-span-7 grid grid-cols-2 gap-6">
@@ -62,7 +82,7 @@ const AgentLearningView = () => (
                   className="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-700" 
                 />
                 <div className="absolute bottom-4 left-6 text-[10px] font-black uppercase tracking-widest text-emerald-400 opacity-0 group-hover/img:opacity-100 transition-opacity">
-                  {i === 0 ? "Hardware Assembly" : "Sensor Integration"}
+                  {i === 0 ? "Face Tracking & Vision" : "Dual-Brain Pipeline"}
                 </div>
               </div>
             ))}
@@ -71,7 +91,7 @@ const AgentLearningView = () => (
       </GlassCard>
     </div>
 
-    {/* 3. World Models (using GradientCard) */}
+    {/* 3. World Models Section (Unchanged, but ensure formatting matches) */}
     <div className="mb-20">
       <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] mb-12 text-center md:text-left">
         {WORLD_MODELS_DATA.subtitle}

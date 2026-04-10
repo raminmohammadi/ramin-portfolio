@@ -67,9 +67,11 @@ export const REPOS = [
 
 export const MILO_PROJECT = {
   title: "Project Milo",
-  subtitle: "Embodied AI: In Development",
-  desc: "Developing a self-learning personal companion. This research applies latent world models to physical embodiment, focusing on human-interaction cues and autonomous representation learning in domestic spaces.",
-  tags: ["Pollen Robotics", "Embodied AI", "SSL Interaction", "Reachy Mini"],
+  subtitle: "Embodied AI Teacher",
+  desc: "A physical AI companion designed for elderly Farsi speakers. Moving beyond the 'screen barrier' to solve the Immigrant Tax, Milo utilizes a hybrid cloud/local pipeline to provide patient, persistent English language instruction through embodied presence.",
+  tags: ["Farsi Teacher", "Gemini Live", "Local-First AI", "Reachy Mini", "Design Thinking"],
+  articleUrl: "https://www.linkedin.com/pulse/my-parents-didnt-want-ai-needed-teacher-ramin-madi-ph-d--bcwhe/",
+  repoUrl: "https://github.com/RaminMohammadi/reachy-mini-teacher-app"
 };
 
 export const WORLD_MODELS_DATA = {
