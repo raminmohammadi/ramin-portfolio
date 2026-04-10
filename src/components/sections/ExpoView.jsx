@@ -7,6 +7,7 @@ import expoJudging from '../../assets/1766011720233.jpeg';
 import expoPartner from '../../assets/1766011714075.jpeg';
 import expoCrowd from '../../assets/1766011720247.jpeg';
 import expoCrowd2 from '../../assets/1745263483597.jpeg';
+import mlopsLogo from '../../assets/MLOPS_Logo.png';
 
 const GoogleCloudLogo = ({ size = 24 }) => (
   <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google Cloud" style={{ width: size, height: size }} className="inline-block" />
@@ -35,6 +36,15 @@ const ExpoView = () => {
       {/* 1. Hero & Stats Section */}
       <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
         <div>
+          {/* NEW: MAIN MLOPS EXPO LOGO Emblem */}
+          <div className="mb-12">
+            <img
+              src={mlopsLogo}
+              alt="MLOps Expo Emblem"
+              className="w-[200px] h-auto md:w-[250px] block grayscale group-hover:grayscale-0 transition-all duration-700"
+            />
+          </div>
+
           <div className="flex items-center gap-4 mb-8">
             <span className="h-[2px] w-16 bg-emerald-500"></span>
             <span className="text-emerald-400 text-lg font-black uppercase tracking-[0.5em] italic">Founder: Ramin Mohammadi</span>
@@ -63,7 +73,7 @@ const ExpoView = () => {
         </div>
       </div>
 
-      {/* 2. NEW: Upcoming Event Banner (Season 06) */}
+      {/* 2. Upcoming Event Banner (Season 06) */}
       <div className="mb-24 relative overflow-hidden rounded-[60px] bg-gradient-to-br from-emerald-900/30 to-[#020617] border border-emerald-500/30 p-10 md:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 shadow-[0_0_50px_-15px_rgba(16,185,129,0.2)]">
         {/* Glow effect */}
         <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3" />

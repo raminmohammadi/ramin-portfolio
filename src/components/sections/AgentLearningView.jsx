@@ -9,6 +9,7 @@ import { GlassCard, GradientCard } from '../ui/Card';
 import { MILO_PROJECT, WORLD_MODELS_DATA } from '../../constants/experienceData';
 import milo1 from '../../assets/milo1.jpeg';
 import milo2 from '../../assets/milo2.jpeg';
+import milo3 from '../../assets/milo_interaction.jpeg'; // The photo with your parents
 
 const AgentLearningView = () => (
   <div className="pt-60 pb-40 px-8 animate-in slide-in-from-bottom duration-1000 max-w-7xl mx-auto">
@@ -74,15 +75,22 @@ const AgentLearningView = () => (
           </div>
 
           <div className="lg:col-span-7 grid grid-cols-2 gap-6">
-            {[milo1, milo2].map((img, i) => (
-              <div key={i} className="rounded-[40px] overflow-hidden border border-white/10 aspect-square shadow-xl relative group/img">
+            {[
+              { img: milo1, label: "Hardware Assembly" },
+              { img: milo2, label: "Dual-Brain Pipeline" },
+              { img: milo3, label: "Human-Centric Design" }, // The one with your parents
+            ].map((item, i) => (
+              <div key={i} className="rounded-[30px] md:rounded-[40px] overflow-hidden border border-white/10 aspect-square shadow-xl relative group/img">
                 <img 
-                  src={img} 
-                  alt={`Milo Build ${i + 1}`} 
-                  className="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-700" 
+                  src={item.img} 
+                  alt={item.label} 
+                  className="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-700 scale-100 group-hover/img:scale-110" 
                 />
-                <div className="absolute bottom-4 left-6 text-[10px] font-black uppercase tracking-widest text-emerald-400 opacity-0 group-hover/img:opacity-100 transition-opacity">
-                  {i === 0 ? "Face Tracking & Vision" : "Dual-Brain Pipeline"}
+                {/* Dynamic Overlay Label */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400">
+                    {item.label}
+                  </span>
                 </div>
               </div>
             ))}
