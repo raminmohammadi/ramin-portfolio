@@ -7,7 +7,7 @@ import expoJudging from '../../assets/1766011720233.jpeg';
 import expoPartner from '../../assets/1766011714075.jpeg';
 import expoCrowd from '../../assets/1766011720247.jpeg';
 import expoCrowd2 from '../../assets/1745263483597.jpeg';
-import mlopsLogo from '../../assets/MLOPS_Logo.png';
+import mlopsSticker from '../../assets/MLOPS_Logo.png';
 
 const GoogleCloudLogo = ({ size = 24 }) => (
   <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google Cloud" style={{ width: size, height: size }} className="inline-block" />
@@ -36,24 +36,34 @@ const ExpoView = () => {
       {/* 1. Hero & Stats Section */}
       <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
         <div>
-          {/* NEW: MAIN MLOPS EXPO LOGO Emblem */}
-          <div className="mb-12">
-            <img
-              src={mlopsLogo}
-              alt="MLOps Expo Emblem"
-              className="w-[200px] h-auto md:w-[250px] block grayscale group-hover:grayscale-0 transition-all duration-700"
-            />
-          </div>
-
           <div className="flex items-center gap-4 mb-8">
             <span className="h-[2px] w-16 bg-emerald-500"></span>
             <span className="text-emerald-400 text-lg font-black uppercase tracking-[0.5em] italic">Founder: Ramin Mohammadi</span>
           </div>
-          <h1 className="text-7xl md:text-9xl font-black text-white tracking-tighter uppercase italic mb-10 leading-none">The MLOps <br/> Expo.</h1>
-          <p className="text-2xl text-slate-400 font-extralight italic mb-12 max-w-2xl border-l-4 border-emerald-500/30 pl-10">
-            The premier recurring summit connecting engineering leads with elite academic talent.
-          </p>
-          <div className="p-12 bg-purple-700/10 border border-purple-500/20 rounded-[60px] shadow-2xl">
+
+          {/* NEW: EMBEDDED STICKER BRANDING AREA */}
+          <div className="relative group max-w-sm"> // Restricts text width and makes container relative
+            
+            {/* LARGE, POPPED, COLOURFUL LOGO STICKER */}
+            <div className="absolute -top-20 -right-20 md:-top-32 md:-right-32 z-10 w-[250px] h-[250px] md:w-[320px] md:h-[320px]">
+              <img
+                src={mlopsSticker}
+                alt="MLOps Expo Sticker Logo"
+                className="w-full h-full object-contain" // Colourful, no grayscale
+              />
+            </div>
+
+            {/* MAIN TITLE (now relative for layering and on top) */}
+            <h1 className="text-7xl md:text-9xl font-black text-white tracking-tighter uppercase italic mb-10 leading-none relative z-20">The MLOps <br/> Expo.</h1>
+            
+            {/* DESCRIPTION PARAGRAPH (now inside the wrapper and on top) */}
+            <p className="text-2xl text-slate-400 font-extralight italic mb-12 border-l-4 border-emerald-500/30 pl-10 relative z-20">
+              The premier recurring summit connecting engineering leads with elite academic talent.
+            </p>
+          </div>
+
+          {/* GOOGLE PARTNERSHIP BOX (now below the wrapper in the main flow) */}
+          <div className="p-12 bg-purple-700/10 border border-purple-500/20 rounded-[60px] shadow-2xl relative z-20">
             <div className="flex items-center gap-6 mb-10">
               <GoogleCloudLogo size={70} />
               <h3 className="text-3xl font-black text-white uppercase italic text-purple-400 tracking-tighter">Google Partnership</h3>
@@ -62,6 +72,7 @@ const ExpoView = () => {
           </div>
         </div>
 
+        {/* STATS GRID (column 2) remains untouched */}
         <div className="grid grid-cols-2 gap-8">
           {[{ label: "Community", val: "500+" }, { label: "Partner", val: "Google", logo: true }, { label: "Sponsor", val: "Cloud", logo: true }, { label: "Season", val: "05" }].map((stat, i) => (
             <div key={i} className="aspect-square bg-white/[0.02] border border-white/5 rounded-[60px] flex flex-col items-center justify-center p-10 border-l-8 border-l-purple-500">
@@ -73,7 +84,7 @@ const ExpoView = () => {
         </div>
       </div>
 
-      {/* 2. Upcoming Event Banner (Season 06) */}
+      {/* 2. Upcoming Event Banner (Season 06) remains untouched */}
       <div className="mb-24 relative overflow-hidden rounded-[60px] bg-gradient-to-br from-emerald-900/30 to-[#020617] border border-emerald-500/30 p-10 md:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 shadow-[0_0_50px_-15px_rgba(16,185,129,0.2)]">
         {/* Glow effect */}
         <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3" />
@@ -114,7 +125,7 @@ const ExpoView = () => {
         </div>
       </div>
 
-      {/* 3. Past Events Gallery */}
+      {/* 3. Past Events Gallery remains untouched */}
       <div className="mb-10 flex items-center gap-4">
         <span className="text-slate-500 text-sm font-black uppercase tracking-[0.4em]">Previous Chapters Archive</span>
         <div className="h-[1px] flex-1 bg-white/5"></div>
