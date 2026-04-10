@@ -35,44 +35,49 @@ const ExpoView = () => {
       
       {/* 1. Hero & Stats Section */}
       <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-        <div>
+        <div className="relative"> {/* Main Container */}
+          
           <div className="flex items-center gap-4 mb-8">
             <span className="h-[2px] w-16 bg-emerald-500"></span>
             <span className="text-emerald-400 text-lg font-black uppercase tracking-[0.5em] italic">Founder: Ramin Mohammadi</span>
           </div>
 
-          {/* NEW: EMBEDDED STICKER BRANDING AREA */}
-          <div className="relative group max-w-sm"> // Restricts text width and makes container relative
+          {/* Clean, un-interrupted Title */}
+          <h1 className="text-7xl md:text-9xl font-black text-white tracking-tighter uppercase italic mb-10 leading-none">
+            The MLOps <br/> Expo.
+          </h1>
+
+          <p className="text-2xl text-slate-400 font-extralight italic mb-12 max-w-2xl border-l-4 border-emerald-500/30 pl-10">
+            The premier recurring summit connecting engineering leads with elite academic talent.
+          </p>
+
+          {/* Integrated Partnership Card with the "Sticker" Badge */}
+          <div className="relative p-12 bg-purple-700/10 border border-purple-500/20 rounded-[60px] shadow-2xl overflow-visible">
             
-            {/* LARGE, POPPED, COLOURFUL LOGO STICKER */}
-            <div className="absolute -top-20 -right-20 md:-top-32 md:-right-32 z-10 w-[250px] h-[250px] md:w-[320px] md:h-[320px]">
-              <img
-                src={mlopsSticker}
-                alt="MLOps Expo Sticker Logo"
-                className="w-full h-full object-contain" // Colourful, no grayscale
-              />
+            {/* THE STICKER: Tilted, shadowed, and anchored as a Seal */}
+            <div className="absolute -top-12 -right-6 md:-top-16 md:-right-10 w-32 h-32 md:w-48 md:h-48 drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] rotate-[12deg] hover:rotate-0 transition-all duration-500 cursor-pointer z-30 group">
+                <img 
+                  src={mlopsSticker} 
+                  alt="MLOps Model Factory Sticker" 
+                  className="w-full h-full object-contain" 
+                />
+                {/* Subtle Tooltip on Hover */}
+                <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-black text-[8px] font-black px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">
+                  Season 05 Badge
+                </span>
             </div>
 
-            {/* MAIN TITLE (now relative for layering and on top) */}
-            <h1 className="text-7xl md:text-9xl font-black text-white tracking-tighter uppercase italic mb-10 leading-none relative z-20">The MLOps <br/> Expo.</h1>
-            
-            {/* DESCRIPTION PARAGRAPH (now inside the wrapper and on top) */}
-            <p className="text-2xl text-slate-400 font-extralight italic mb-12 border-l-4 border-emerald-500/30 pl-10 relative z-20">
-              The premier recurring summit connecting engineering leads with elite academic talent.
-            </p>
-          </div>
-
-          {/* GOOGLE PARTNERSHIP BOX (now below the wrapper in the main flow) */}
-          <div className="p-12 bg-purple-700/10 border border-purple-500/20 rounded-[60px] shadow-2xl relative z-20">
-            <div className="flex items-center gap-6 mb-10">
+            <div className="flex items-center gap-6 mb-10 relative z-10">
               <GoogleCloudLogo size={70} />
               <h3 className="text-3xl font-black text-white uppercase italic text-purple-400 tracking-tighter">Google Partnership</h3>
             </div>
-            <p className="text-xl text-slate-300 italic font-extralight">Season 5 hosted at Google Cambridge. Supported by Google Cloud.</p>
+            <p className="text-xl text-slate-300 italic font-extralight relative z-10 max-w-md">
+              Season 5 hosted at Google Cambridge. Supported by Google Cloud.
+            </p>
           </div>
         </div>
 
-        {/* STATS GRID (column 2) remains untouched */}
+        {/* 2. Stats Grid (Remains the same) */}
         <div className="grid grid-cols-2 gap-8">
           {[{ label: "Community", val: "500+" }, { label: "Partner", val: "Google", logo: true }, { label: "Sponsor", val: "Cloud", logo: true }, { label: "Season", val: "05" }].map((stat, i) => (
             <div key={i} className="aspect-square bg-white/[0.02] border border-white/5 rounded-[60px] flex flex-col items-center justify-center p-10 border-l-8 border-l-purple-500">
