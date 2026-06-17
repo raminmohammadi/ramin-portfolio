@@ -8,7 +8,7 @@ import trackerImg2 from '../assets/activity_tracker2.png';
 export const PRIMARY_EXPERIENCE = [
   { 
     role: "Director of Applied AI Engineering | iBase-t", 
-    time: "2026 — Present | California", 
+    time: "2026 — Present | North America", 
     desc: "Driving strategic AI vision, platform governance, and cross-functional delivery for aerospace and defense manufacturing.",
     gradient: "from-emerald-500 via-emerald-400 to-blue-500",
     icon: <Target className="size-24 md:size-40" />,
