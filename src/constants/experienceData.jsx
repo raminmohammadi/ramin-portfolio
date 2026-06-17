@@ -16,7 +16,7 @@ export const PRIMARY_EXPERIENCE = [
   },
   { 
     role: "Lead Principal AI Engineer | iBase-t", 
-    time: "2025 — 2025 | California", 
+    time: "2025 — 2026 | California", 
     desc: "Directing high-performing AI organization. Secured major enterprise customers via Solumina-AI.",
     gradient: "from-emerald-500 via-emerald-400 to-blue-500",
     icon: <Target className="size-24 md:size-40" />,
