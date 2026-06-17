@@ -6,10 +6,10 @@ import trackerImg1 from '../assets/activity_tracker1.png';
 import trackerImg2 from '../assets/activity_tracker2.png';
 
 export const PRIMARY_EXPERIENCE = [
-    { 
+  { 
     role: "Director of Applied AI Engineering | iBase-t", 
     time: "2026 — Present | California", 
-    desc: "Directing high-performing AI organization. Secured major enterprise customers via Solumina-AI.",
+    desc: "Driving strategic AI vision, platform governance, and cross-functional delivery for aerospace and defense manufacturing.",
     gradient: "from-emerald-500 via-emerald-400 to-blue-500",
     icon: <Target className="size-24 md:size-40" />,
     tags: ["AI Strategy", "Industrial Scale"]
@@ -17,7 +17,7 @@ export const PRIMARY_EXPERIENCE = [
   { 
     role: "Lead Principal AI Engineer | iBase-t", 
     time: "2025 — 2026 | California", 
-    desc: "Directing high-performing AI organization. Secured major enterprise customers via Solumina-AI.",
+    desc: "Built the AI division from the ground up, shipping Solumina-AI and onboarding 6+ enterprise clients.",
     gradient: "from-emerald-500 via-emerald-400 to-blue-500",
     icon: <Target className="size-24 md:size-40" />,
     tags: ["AI Strategy", "Industrial Scale"]
