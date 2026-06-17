@@ -1,6 +1,6 @@
 # 🚀 Executive AI Portfolio: Modular Architecture
 
-**Principal AI Leader • PhD Scientist • Strategic Founder**
+**Director of Applied AI Engineering • PhD Scientist • Strategic Founder**
 
 This repository contains the professional portfolio of **Ramin Mohammadi, Ph.D.** It has been engineered with a focus on **Separation of Concerns (SoC)**, **Declarative UI**, and **Performance**, reflecting the architectural standards required for enterprise-grade AI systems.
 
