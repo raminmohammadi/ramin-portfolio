@@ -14,6 +14,7 @@ import AgentLearningView from './components/sections/AgentLearningView';
 import ResearchView from './components/sections/ResearchView';
 import ExpoView from './components/sections/ExpoView';
 import ProjectsView from './components/sections/ProjectsView';
+import HackathonsView from './components/sections/HackathonsView'; // Added Hackathons View Import
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="/research" element={<ResearchView />} />
             <Route path="/expo" element={<ExpoView />} />
             <Route path="/projects" element={<ProjectsView />} />
+            <Route path="/hackathons" element={<HackathonsView />} /> {/* Registered Hackathons Route */}
             
             {/* Catch-all: If user goes to a URL that doesn't exist, send them Home */}
             <Route path="*" element={<HomeView />} />

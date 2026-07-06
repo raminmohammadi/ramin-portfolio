@@ -5,6 +5,15 @@ import { Target, TrendingUp, Zap } from 'lucide-react';
 import trackerImg1 from '../assets/activity_tracker1.png';
 import trackerImg2 from '../assets/activity_tracker2.png';
 
+// Import Hackathon Photos
+import hackathon1 from '../assets/hackathon1.JPG';
+import hackathon2 from '../assets/hackathon2.JPG';
+import hackathon3 from '../assets/hackathon3.JPG';
+import hackathon4 from '../assets/hackathon4.JPG';
+import hackathon5 from '../assets/hackathon5.JPG';
+import hackathon6 from '../assets/hackathon6.JPG';
+import hackathon7 from '../assets/hackathon7.JPG';
+
 export const PRIMARY_EXPERIENCE = [
   { 
     role: "Director of Applied AI Engineering | iBase-t", 
@@ -114,20 +123,46 @@ export const TEACHING_DATA = {
   }
 };
 
+export const HACKATHONS_DATA = [
+  {
+    id: "cgx-neu-2025",
+    title: "CGX x Northeastern",
+    subtitle: "Generative AI & Agentic Systems Hackathon",
+    location: "Northeastern University, Boston",
+    date: "2025",
+    description: "An elite full day sprint bringing together top-tier academic engineering talent and industry primitives to build, deploy, and stress-test autonomous agents and generative pipelines.",
+    isActive: false,
+    rsvpLink: "#",
+    stats: [
+      { label: "Builders", val: "100+" },
+      { label: "Projects Shipped", val: "42" },
+    ],
+    gallery: [
+      { src: hackathon1, label: 'Featured Spotlight', span: 'md:col-span-4 h-[640px]' },
+      { src: hackathon2, label: 'Hacking & Sprints', span: 'md:col-span-8 h-[300px]' },
+      { src: hackathon3, label: 'Technical Mentorship', span: 'md:col-span-4 h-[300px]' },
+      { src: hackathon4, label: 'Architecture Reviews', span: 'md:col-span-4 h-[300px]' },
+      { src: hackathon5, label: 'Final Pitches', span: 'md:col-span-8 h-[300px]' },
+      { src: hackathon6, label: 'Industry Judging', span: 'md:col-span-6 h-[300px]' },
+      { src: hackathon7, label: 'Winning Teams', span: 'md:col-span-6 h-[300px]' },
+    ]
+  }
+];
+
 // Add these to your existing research constants
 export const HUMAN_RESEARCH = [
   {
     title: "Factors Influencing Exercise Engagement...",
     desc: "Determined the individualistic reasons for nonengagement...",
     link: "https://mhealth.jmir.org/2019/10/e11603",
-    image: trackerImg2, // 2. Use the imported variable, NOT a string
+    image: trackerImg2, 
     tag: "JMIR mHealth"
   },
   {
     title: "Algorithm for Adjusting Activity Targets...",
     desc: "Built an ML model to predict achievable weekly activity targets...",
     link: "https://mhealth.jmir.org/2020/9/e18142/",
-    image: trackerImg1, // 2. Use the imported variable
+    image: trackerImg1, 
     tag: "ML Modeling"
   }
 ];
