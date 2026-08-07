@@ -38,17 +38,46 @@ const ExecView = () => {
             <h3 className={`text-4xl md:text-6xl font-black italic tracking-tighter uppercase mb-8 text-transparent bg-clip-text bg-gradient-to-r ${job.gradient}`}>
               {job.role}
             </h3>
-            <p className="text-2xl md:text-3xl text-slate-300 leading-snug font-extralight italic mb-10">
-              {job.desc}
-            </p>
-            
-            <div className="flex gap-4 mb-10">
-              {job.tags.map((tag, idx) => (
-                <div key={idx} className="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase text-slate-400 group-hover:text-white transition-colors">
-                  {tag}
+            {job.breakdown ? (
+              <div className="mb-10 border border-white/10 rounded-[30px] overflow-hidden bg-slate-950/30">
+                {job.breakdown.map((position, idx) => (
+                  <article key={position.role} className={`p-8 md:p-10 ${idx > 0 ? 'border-t border-white/10' : ''}`}>
+                    {position.time && (
+                      <span className="text-emerald-400 font-black text-[10px] uppercase tracking-[0.4em] block mb-4">
+                        {position.time}
+                      </span>
+                    )}
+                    <h4 className="text-xl md:text-3xl font-black uppercase italic tracking-tight text-white mb-5">
+                      {position.role}
+                    </h4>
+                    <p className="text-lg md:text-xl text-slate-300 leading-snug font-extralight italic mb-6">
+                      {position.desc}
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      {position.tags.map((tag) => (
+                        <div key={tag} className="px-5 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase text-slate-400">
+                          {tag}
+                        </div>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <>
+                <p className="text-2xl md:text-3xl text-slate-300 leading-snug font-extralight italic mb-10">
+                  {job.desc}
+                </p>
+
+                <div className="flex gap-4 mb-10">
+                  {job.tags.map((tag, idx) => (
+                    <div key={idx} className="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase text-slate-400 group-hover:text-white transition-colors">
+                      {tag}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </>
+            )}
 
             {job.isIgnite && (
               <div className="relative rounded-[40px] overflow-hidden border border-white/10 aspect-video shadow-2xl">

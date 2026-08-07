@@ -6,7 +6,8 @@ import { SectionHeader } from '../ui/SectionHeader';
 import { GlassCard, GradientCard } from '../ui/Card';
 
 // Data & Assets
-import { MILO_PROJECT, WORLD_MODELS_DATA } from '../../constants/experienceData';
+import { CGX_PROJECT, MILO_PROJECT, WORLD_MODELS_DATA } from '../../constants/experienceData';
+import cgxLogo from '../../assets/CGX.png';
 import milo1 from '../../assets/milo1.jpeg';
 import milo2 from '../../assets/milo2.jpeg';
 import milo3 from '../../assets/milo_interaction.jpeg'; // The photo with your parents
@@ -23,7 +24,55 @@ const AgentLearningView = () => (
       color="emerald"
     />
 
-    {/* 2. Project Milo: Embodied AI */}
+    {/* 2. CGX: Local-First Coding Agent */}
+    <div className="mb-40">
+      <div className="flex items-center gap-6 mb-12">
+        <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] leading-none">
+          {CGX_PROJECT.subtitle}
+        </h2>
+        <span className="-rotate-2 px-4 py-2 bg-cyan-300 text-[#020617] border-2 border-cyan-100 rounded-md text-[10px] font-black uppercase tracking-[0.2em] shadow-[3px_3px_0_rgba(255,255,255,0.35)]">
+          Open Source
+        </span>
+      </div>
+
+      <GradientCard gradient="from-cyan-500 via-blue-500 to-emerald-400">
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-4 mb-8">
+              <Cpu size={32} className="text-cyan-300" />
+              <span className="text-slate-500 font-black text-xs uppercase tracking-[0.5em]">Self-Hosted Coding AI Agent</span>
+            </div>
+            <h3 className="text-4xl md:text-6xl font-black italic tracking-tighter uppercase mb-8 text-white leading-none">
+              {CGX_PROJECT.title}
+            </h3>
+            <p className="text-xl md:text-2xl text-slate-300 font-extralight italic mb-10 leading-snug">
+              {CGX_PROJECT.desc}
+            </p>
+            <div className="flex flex-wrap gap-4 mb-10">
+              {CGX_PROJECT.tags.map((tag) => (
+                <div key={tag} className="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase text-slate-300">
+                  {tag}
+                </div>
+              ))}
+            </div>
+            <a
+              href={CGX_PROJECT.repoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="px-8 py-4 bg-white text-[#020617] font-black uppercase tracking-widest text-[10px] hover:bg-cyan-200 transition-all inline-flex items-center gap-3 shadow-xl"
+            >
+              Explore CGX <Github size={16} />
+            </a>
+          </div>
+
+          <div className="lg:col-span-5 flex items-center justify-center rounded-[40px] border border-white/10 bg-slate-950/50 p-10 shadow-2xl">
+            <img src={cgxLogo} alt="CGX — Code Graph eXecution" className="w-full max-w-sm object-contain" />
+          </div>
+        </div>
+      </GradientCard>
+    </div>
+
+    {/* 3. Project Milo: Embodied AI */}
     <div className="mb-40">
       <div className="flex items-center gap-6 mb-12">
         <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] leading-none">
@@ -101,7 +150,7 @@ const AgentLearningView = () => (
       </GlassCard>
     </div>
 
-    {/* 3. World Models Section (Unchanged, but ensure formatting matches) */}
+    {/* 4. World Models Section */}
     <div className="mb-20">
       <h2 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.6em] mb-12 text-center md:text-left">
         {WORLD_MODELS_DATA.subtitle}

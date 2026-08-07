@@ -15,29 +15,53 @@ import hackathon6 from '../assets/hackathon6.JPG';
 import hackathon7 from '../assets/hackathon7.JPG';
 
 export const PRIMARY_EXPERIENCE = [
-  { 
-    role: "Director of Applied AI Engineering | iBase-t", 
-    time: "2026 — Present | North America", 
-    desc: "Driving strategic AI vision, platform governance, and cross-functional delivery for aerospace and defense manufacturing.",
-    gradient: "from-emerald-500 via-emerald-400 to-blue-500",
-    icon: <Target className="size-24 md:size-40" />,
-    tags: ["AI Strategy", "Industrial Scale"]
+  {
+    role: "SVP of Engineering and Technology | NonStop Health",
+    time: "2026 — Present | Healthcare Technology",
+    desc: "Leading engineering and technology strategy for a healthcare benefits organization focused on making high-quality coverage more accessible and straightforward.",
+    gradient: "from-cyan-500 via-blue-500 to-emerald-400",
+    icon: <TrendingUp className="size-24 md:size-40" />,
+    tags: ["Engineering Leadership", "Healthcare Technology"]
   },
   { 
-    role: "Lead Principal AI Engineer | iBase-t", 
-    time: "2025 — 2026 | California", 
-    desc: "Built the AI division from the ground up, shipping Solumina-AI and onboarding 6+ enterprise clients.",
+    role: "Director of Applied AI Engineering | iBase-t", 
+    time: "2025 — 2026 | North America",
     gradient: "from-emerald-500 via-emerald-400 to-blue-500",
     icon: <Target className="size-24 md:size-40" />,
-    tags: ["AI Strategy", "Industrial Scale"]
+    breakdown: [
+      {
+        role: "Director of Applied AI Engineering",
+        time: "2026 | North America",
+        desc: "Driving strategic AI vision, platform governance, and cross-functional delivery for aerospace and defense manufacturing.",
+        tags: ["AI Strategy", "Industrial Scale"]
+      },
+      {
+        role: "LEAD PRINCIPAL AI ENGINEER",
+        time: "2025 — 2026 | Remote",
+        desc: "Built the AI division from the ground up, shipping Solumina-AI and onboarding 6+ enterprise clients.",
+        tags: ["AI Strategy", "Industrial Scale"]
+      }
+    ]
   },
   { 
     role: "ML Manager - Principal ML Engineer | Tausight", 
     time: "2019 — 2025 | Massachusetts", 
-    desc: "Managed the full ML lifecycle and scaled team from inception to maturity. Optimized training efficiency by 40% for HIPAA-compliant systems.",
     gradient: "from-blue-600 via-blue-400 to-emerald-500",
     icon: <TrendingUp className="size-24 md:size-40" />,
-    tags: ["Healthcare AI", "MLOps"]
+    breakdown: [
+      {
+        role: "Head of Machine Learning",
+        time: "2023 — 2025 | United States · Hybrid",
+        desc: "Led and mentored a high-performing data science and ML engineering team while directing cross-functional AI/ML proof-of-concepts from technical feasibility to strategic value. Built customer-facing data products and represented the company’s AI initiatives at industry conferences and accelerator programs.",
+        tags: ["ML Leadership", "AI Strategy", "Data Products", "Team Building"]
+      },
+      {
+        role: "Principal Machine Learning Engineer",
+        time: "2019 — 2023 | Boston, Massachusetts · Remote",
+        desc: "Owned the end-to-end ML lifecycle—from MLOps pipeline design and deployment through monitoring and calibration. Developed NLP for IoT devices, engineered privacy-preserving federated-learning agents for decentralized edge environments, and designed transformer- and medical-BERT-based labeling pipelines for faster model calibration.",
+        tags: ["MLOps", "Edge AI", "Federated Learning", "Healthcare NLP"]
+      }
+    ]
   },
   { 
     role: "Intel Ignite Alumnus", 
@@ -89,6 +113,14 @@ export const MILO_PROJECT = {
   tags: ["Farsi Teacher", "Gemini Live", "Local-First AI", "Reachy Mini", "Design Thinking"],
   articleUrl: "https://www.linkedin.com/pulse/my-parents-didnt-want-ai-needed-teacher-ramin-madi-ph-d--bcwhe/",
   repoUrl: "https://github.com/RaminMohammadi/reachy-mini-teacher-app"
+};
+
+export const CGX_PROJECT = {
+  title: "CGX",
+  subtitle: "Code Graph eXecution",
+  desc: "A local-first coding agent that turns complex codebases into navigable knowledge. CGX fuses semantic, lexical, and code-graph retrieval to deliver grounded answers, cited change plans, and self-tested generation workflows—giving developers privacy, control, and confidence in every iteration.",
+  tags: ["Local-First AI", "Hybrid Retrieval", "Code Graphs", "Code Generation", "Agent Harness"],
+  repoUrl: "https://github.com/raminmohammadi/CGX"
 };
 
 export const WORLD_MODELS_DATA = {
