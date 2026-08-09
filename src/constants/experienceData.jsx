@@ -33,13 +33,13 @@ export const PRIMARY_EXPERIENCE = [
         role: "Director of Applied AI Engineering",
         time: "2026 | North America",
         desc: "Driving strategic AI vision, platform governance, and cross-functional delivery for aerospace and defense manufacturing.",
-        tags: ["AI Strategy", "Industrial Scale"]
+        tags: ["AI Strategy", "Industrial Scale", "A&D Manufacturing"]
       },
       {
         role: "LEAD PRINCIPAL AI ENGINEER",
         time: "2025 — 2026 | Remote",
         desc: "Built the AI division from the ground up, shipping Solumina-AI and onboarding 6+ enterprise clients.",
-        tags: ["AI Strategy", "Industrial Scale"]
+        tags: ["Air-Gapped Deployment", "Industrial Scale", "A&D Manufacturing"]
       }
     ]
   },
